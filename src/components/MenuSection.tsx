@@ -276,9 +276,9 @@ const MenuSection = () => {
                   <motion.button
                     key={`${c.id}-${i}`}
                     onClick={() => setActive(realIndex)}
-                    className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display uppercase tracking-wide transition-all border-2 whitespace-nowrap ${
+                    className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display font-medium tracking-wide transition-all border whitespace-nowrap ${
                       active === realIndex
-                        ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(48_96%_53%/0.35)]"
+                        ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.2)]"
                         : "bg-transparent text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
                     }`}
                     whileHover={{ scale: 1.05 }}
