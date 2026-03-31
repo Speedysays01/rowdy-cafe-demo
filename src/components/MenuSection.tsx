@@ -1,7 +1,8 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import AnimatedSection from "./AnimatedSection";
-import { Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import foodMomos from "@/assets/food-tandoori-momos.jpg";
 import foodCorndogs from "@/assets/food-corndogs.jpg";
