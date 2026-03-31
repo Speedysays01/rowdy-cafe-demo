@@ -40,12 +40,11 @@ const ParallaxCard = ({
         className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer"
         style={{ height: "clamp(320px, 55vh, 500px)" }}
       >
-        {/* Placeholder bg — will be replaced with images */}
-        <div
-          className="absolute inset-0 bg-gradient-to-br from-secondary to-card"
-          style={{
-            backgroundImage: `linear-gradient(135deg, hsl(0 0% ${8 + index * 3}%), hsl(48 30% ${12 + index * 4}%))`,
-          }}
+        {/* Location image */}
+        <img
+          src={location.image}
+          alt={`Rowdy Cafe ${location.name}`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Overlay gradient */}
