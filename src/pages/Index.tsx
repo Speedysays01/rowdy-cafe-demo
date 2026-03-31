@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import FounderSection from "@/components/FounderSection";
 
 import MenuSection from "@/components/MenuSection";
+import InteriorSection from "@/components/InteriorSection";
 import ProfitSection from "@/components/ProfitSection";
 import InvestmentSection from "@/components/InvestmentSection";
 import ROISection from "@/components/ROISection";
@@ -28,6 +29,7 @@ const Index = () => {
         <HeroSection />
         <FounderSection />
         <MenuSection />
+        <InteriorSection />
         <InvestmentSection />
         <ProfitSection />
         <ROISection />
