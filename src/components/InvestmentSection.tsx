@@ -19,7 +19,7 @@ const costs = [
 ];
 
 const InvestmentSection = () => (
-  <section id="investment" className="section-padding relative noise-bg section-dark-d overflow-hidden">
+  <section id="investment" className="section-padding relative noise-bg section-dark-d grid-bg overflow-hidden">
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
         <div className="text-center mb-6">

@@ -58,7 +58,7 @@ const ROISection = () => {
   const s = scenarios[active];
 
   return (
-    <section className="section-padding relative noise-bg section-dark-a section-stripe-overlay overflow-hidden">
+    <section className="section-padding relative noise-bg section-dark-a grid-bg overflow-hidden">
       <div className="container mx-auto max-w-5xl relative z-10">
         <AnimatedSection>
           <div className="text-center mb-12">
