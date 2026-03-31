@@ -1,9 +1,7 @@
 import { useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import IndustrySection from "@/components/IndustrySection";
-import ProblemSection from "@/components/ProblemSection";
-import WhyRowdySection from "@/components/WhyRowdySection";
+// import WhyRowdySection from "@/components/WhyRowdySection"; // Hidden for now — can restore later
 import FounderSection from "@/components/FounderSection";
 import PresenceSection from "@/components/PresenceSection";
 import MenuSection from "@/components/MenuSection";
@@ -29,12 +27,6 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <BrushDivider variant="flame" />
-        <IndustrySection />
-        <BrushDivider variant="glow-line" />
-        <ProblemSection />
-        <BrushDivider variant="brush" />
-        <WhyRowdySection />
-        <BrushDivider variant="ember" />
         <FounderSection />
         <BrushDivider variant="flame" />
         <PresenceSection />
