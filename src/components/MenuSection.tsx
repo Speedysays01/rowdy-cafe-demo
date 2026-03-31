@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import { Package, Flame, ClipboardList, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import foodMomos from "@/assets/food-tandoori-momos.jpg";
 import foodCorndogs from "@/assets/food-corndogs.jpg";
