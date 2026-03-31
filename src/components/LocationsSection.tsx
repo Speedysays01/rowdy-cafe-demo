@@ -56,10 +56,10 @@ const LocationCard = ({ location, index, isMobile, totalCards }: LocationCardPro
   return (
     <div ref={sectionRef} className={isMobile ? `relative ${mobileTrackHeight}` : "relative"}>
       <motion.article
-        className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card ${
-          isMobile ? "sticky h-[68vh] min-h-[460px]" : "h-[420px]"
+        className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-2xl ${
+          isMobile ? "sticky h-[72vh] min-h-[480px]" : "h-[420px]"
         }`}
-        style={isMobile ? { top: mobileTopOffset, scale } : undefined}
+        style={isMobile ? { top: mobileTopOffset, scale, zIndex: index + 1 } : undefined}
       >
         <motion.img
           src={location.image}
