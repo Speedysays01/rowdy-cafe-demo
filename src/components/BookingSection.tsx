@@ -88,14 +88,17 @@ const BookingSection = () => {
               />
             </div>
 
-            <motion.div
+            <motion.a
+              href="https://cal.com/rowdycafe/15min"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Button variant="hero" size="chunky" className="w-full" type="submit">
+              <Button variant="hero" size="chunky" className="w-full" type="button">
                 🔥 Book a Franchise Meeting
               </Button>
-            </motion.div>
+            </motion.a>
 
             <p className="text-xs text-muted-foreground text-center font-body">
               Our team will contact you within 24 hours. No spam, ever.
