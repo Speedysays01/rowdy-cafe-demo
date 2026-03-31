@@ -1,12 +1,16 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import vileParleImg from "@/assets/vile_parle.jpg";
+import thaneImg from "@/assets/thane.jpg";
+import viharImg from "@/assets/vihar.webp";
+import naviMumbaiImg from "@/assets/navi_mumbai.jpg";
 
 const locations = [
-  { name: "Vile Parle", tagline: "Where it all began", address: "Vile Parle West, Mumbai" },
-  { name: "Thane", tagline: "The suburban powerhouse", address: "Thane West, Mumbai" },
-  { name: "Virar", tagline: "Bold & unstoppable", address: "Virar, Mumbai" },
-  { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra" },
+  { name: "Vile Parle", tagline: "Where it all began", address: "Vile Parle West, Mumbai", image: vileParleImg },
+  { name: "Thane", tagline: "The suburban powerhouse", address: "Thane West, Mumbai", image: thaneImg },
+  { name: "Virar", tagline: "Bold & unstoppable", address: "Virar, Mumbai", image: viharImg },
+  { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra", image: naviMumbaiImg },
 ];
 
 const ParallaxCard = ({
