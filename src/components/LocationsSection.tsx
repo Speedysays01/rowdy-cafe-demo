@@ -27,7 +27,7 @@ const LocationCard = ({
   });
 
   // Parallax on the background image only
-  const imgY = useTransform(scrollYProgress, [0, 1], ["−15%", "15%"]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
     <motion.div
