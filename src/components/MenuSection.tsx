@@ -179,7 +179,18 @@ const MenuSection = () => {
   
 
   return (
-    <section id="menu" className="section-padding relative noise-bg section-dark-b overflow-hidden">
+    <section id="menu" className="section-padding relative overflow-hidden">
+      {/* Fire video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/videos/fire.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-background/80" />
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* --- Header --- */}
         <AnimatedSection>
