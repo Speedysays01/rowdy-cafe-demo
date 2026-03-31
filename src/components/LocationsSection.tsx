@@ -1,12 +1,16 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import vileParleImg from "@/assets/vile_parle.jpg";
+import thaneImg from "@/assets/thane.jpg";
+import viharImg from "@/assets/vihar.webp";
+import naviMumbaiImg from "@/assets/navi_mumbai.jpg";
 
 const locations = [
-  { name: "Vile Parle", tagline: "Where it all began", address: "Vile Parle West, Mumbai" },
-  { name: "Thane", tagline: "The suburban powerhouse", address: "Thane West, Mumbai" },
-  { name: "Virar", tagline: "Bold & unstoppable", address: "Virar, Mumbai" },
-  { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra" },
+  { name: "Vile Parle", tagline: "Where it all began", address: "Vile Parle West, Mumbai", image: vileParleImg },
+  { name: "Thane", tagline: "The suburban powerhouse", address: "Thane West, Mumbai", image: thaneImg },
+  { name: "Virar", tagline: "Bold & unstoppable", address: "Virar, Mumbai", image: viharImg },
+  { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra", image: naviMumbaiImg },
 ];
 
 const ParallaxCard = ({
@@ -36,12 +40,11 @@ const ParallaxCard = ({
         className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer"
         style={{ height: "clamp(320px, 55vh, 500px)" }}
       >
-        {/* Placeholder bg — will be replaced with images */}
-        <div
-          className="absolute inset-0 bg-gradient-to-br from-secondary to-card"
-          style={{
-            backgroundImage: `linear-gradient(135deg, hsl(0 0% ${8 + index * 3}%), hsl(48 30% ${12 + index * 4}%))`,
-          }}
+        {/* Location image */}
+        <img
+          src={location.image}
+          alt={`Rowdy Cafe ${location.name}`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
         {/* Overlay gradient */}
