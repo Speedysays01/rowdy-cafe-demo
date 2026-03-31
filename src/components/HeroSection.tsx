@@ -27,6 +27,7 @@ const features = [
   { icon: Factory, text: "Direct Supply From Factory" },
   { icon: UtensilsCrossed, text: "100+ Trendy Menu Products" },
   { icon: Star, text: "4.3 Google Rating Across Outlets" },
+  { icon: MapPin, text: "100+ Locations Throughout India" },
 ];
 
 const HeroContent = () => {
