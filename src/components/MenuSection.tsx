@@ -223,7 +223,7 @@ const MenuSection = () => {
               {[...featured, ...featured].map((item, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-[240px] md:w-[300px] relative group cursor-pointer overflow-hidden rounded-sm border-2 border-border hover:border-primary/50 transition-colors"
+                  className="flex-shrink-0 w-[240px] md:w-[300px] relative group cursor-pointer overflow-hidden rounded-2xl border border-border hover:border-primary/50 transition-colors"
                 >
                   <div className="relative overflow-hidden aspect-[4/3]">
                     <img
