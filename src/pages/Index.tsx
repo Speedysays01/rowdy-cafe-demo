@@ -27,9 +27,6 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <FounderSection />
-        <BrushDivider variant="flame" />
-        <PresenceSection />
-        <BrushDivider variant="glow-line" />
         <MenuSection />
         <BrushDivider variant="brush" />
         <InvestmentSection />
