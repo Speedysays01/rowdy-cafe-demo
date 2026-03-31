@@ -174,6 +174,110 @@ const TiltCard = ({ children, className = "" }: { children: React.ReactNode; cla
   );
 };
 
+const CategoryCarousel = ({ cat }: { cat: typeof categories[0] }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(true);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    onSelect();
+    return () => { emblaApi.off("select", onSelect); emblaApi.off("reInit", onSelect); };
+  }, [emblaApi]);
+
+  return (
+    <div>
+      {/* Category header */}
+      <div className="flex items-end justify-between mb-4">
+        <div>
+          <h3 className="text-2xl md:text-4xl font-headline font-bold mb-1">{cat.label}</h3>
+          <p className="text-primary font-display text-xs md:text-sm tracking-wide font-medium">
+            {cat.tagline}
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => emblaApi?.scrollPrev()}
+            disabled={!canScrollPrev}
+            className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors disabled:opacity-30"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => emblaApi?.scrollNext()}
+            disabled={!canScrollNext}
+            className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors disabled:opacity-30"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* Carousel */}
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex gap-3">
+          {/* Hero image slide */}
+          <div className="flex-shrink-0 w-[65%] md:w-[35%]">
+            <TiltCard className="overflow-hidden border border-border hover:border-primary/40 rounded-2xl h-full">
+              <div className="relative overflow-hidden aspect-[3/4] group">
+                <img
+                  src={cat.heroImage}
+                  alt={cat.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              </div>
+            </TiltCard>
+          </div>
+
+          {/* Item slides */}
+          {cat.items.map((item, i) => (
+            <motion.div
+              key={item.name}
+              className="flex-shrink-0 w-[42%] md:w-[22%]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+            >
+              <TiltCard className="rowdy-card p-5 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30 flex flex-col justify-center aspect-[3/4]">
+                <p className="text-sm md:text-base font-display font-bold mb-2 group-hover:text-primary transition-colors">
+                  {item.name}
+                </p>
+                <p className="text-[11px] md:text-xs text-muted-foreground font-body">{item.desc}</p>
+              </TiltCard>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Extras (gravies) */}
+      {cat.extras && (
+        <div className="mt-5">
+          <p className="text-[10px] font-display tracking-widest text-muted-foreground mb-2">
+            Gravies Supplied
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {cat.extras.map((e) => (
+              <span
+                key={e}
+                className="px-3 py-1 text-[10px] font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
+              >
+                {e}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const MenuSection = () => {
   const [active, setActive] = useState(0);
   const cat = categories[active];
