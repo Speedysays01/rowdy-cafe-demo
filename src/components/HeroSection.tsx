@@ -135,31 +135,34 @@ const HeroContent = () => {
             </motion.div>
           </motion.div>
 
-          {/* Feature cards */}
+          {/* Feature badges — infinite scroll marquee */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.18, delayChildren: 6.5 } },
-            }}
+            className="relative w-full overflow-hidden mt-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 6.5, duration: 0.6 }}
           >
-            {features.map((f, i) => (
-              <motion.div
-                key={i}
-                className="rowdy-card p-2.5 md:p-4 flex flex-col items-center gap-1.5 md:gap-2 group cursor-default bg-background/60"
-                variants={{
-                  hidden: { opacity: 0, y: 40, scale: 0.9 },
-                  visible: { opacity: 1, y: 0, scale: 1 },
-                }}
-                whileHover={{ y: -6, rotate: i % 2 === 0 ? 1 : -1, boxShadow: "0 0 25px hsl(48 96% 53% / 0.2)" }}
-                transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              >
-                <f.icon className="w-5 h-5 md:w-7 md:h-7 text-primary group-hover:text-accent transition-colors" />
-                <span className="text-[9px] md:text-xs font-display uppercase tracking-wide text-foreground/80 text-center leading-tight">{f.text}</span>
-              </motion.div>
-            ))}
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-background/80 to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-background/80 to-transparent" />
+
+            <motion.div
+              className="flex gap-3 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ x: { duration: 20, repeat: Infinity, ease: "linear" } }}
+            >
+              {[...features, ...features].map((f, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 border-2 border-primary/30 bg-background/70 backdrop-blur-sm rounded-full hover:border-primary hover:shadow-[0_0_20px_hsl(48_96%_53%/0.25)] transition-all duration-300 group cursor-default"
+                >
+                  <f.icon className="w-4 h-4 md:w-5 md:h-5 text-primary group-hover:text-accent transition-colors" />
+                  <span className="text-[10px] md:text-xs font-display uppercase tracking-widest text-foreground/90 whitespace-nowrap font-bold">
+                    {f.text}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </div>
