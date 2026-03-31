@@ -254,35 +254,15 @@
   }
 
   .brush-heading {
-    position: relative;
-    display: inline;
     color: hsl(0 0% 5%);
     -webkit-text-fill-color: hsl(0 0% 5%);
+    background-color: hsl(48 96% 53%);
     background-image: none;
     -webkit-background-clip: unset;
-    padding: 0.05em 0.35em;
-  }
-
-  .brush-heading::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -6px;
-    right: -6px;
-    top: -2px;
-    background: hsl(48 96% 53%);
-    z-index: -1;
+    padding: 0.05em 0.3em;
     border-radius: 4px;
-    transform: skew(-2deg) rotate(-0.5deg);
-    box-shadow: 
-      -4px 0 0 hsl(48 96% 53%),
-      4px 0 0 hsl(48 96% 53%),
-      -2px -3px 6px hsl(48 96% 53% / 0.3),
-      6px 2px 4px hsl(48 96% 53% / 0.2);
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Crect x='0' y='0' width='100' height='20' rx='3' fill='black'/%3E%3C/svg%3E");
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Crect x='0' y='0' width='100' height='20' rx='3' fill='black'/%3E%3C/svg%3E");
-    mask-size: 100% 100%;
-    -webkit-mask-size: 100% 100%;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .noise-bg {
