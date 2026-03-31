@@ -115,8 +115,8 @@ const HeroContent = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="rounded-full"
             >
-              <Button variant="hero" size="chunky" className="w-full sm:w-auto" asChild>
-                <a href="#booking">🔥 Book Franchise Meeting</a>
+              <Button variant="hero" size="default" className="text-xs px-4 py-3 whitespace-nowrap" asChild>
+                <a href="#booking">🔥 Book Meeting</a>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
