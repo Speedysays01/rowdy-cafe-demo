@@ -1,11 +1,5 @@
 import { useRef } from "react";
-import {
-  motion,
-  type MotionValue,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { useIsMobile } from "@/hooks/use-mobile";
 import vileParleImg from "@/assets/vile_parle.jpg";
@@ -46,27 +40,19 @@ const locations = [
 
 type Location = (typeof locations)[number];
 
-interface DesktopCardProps {
-  index: number;
-  location: Location;
-}
+/* ─── Desktop card with subtle image parallax ─── */
 
-const DesktopLocationCard = ({ location, index }: DesktopCardProps) => {
+const DesktopLocationCard = ({ location, index }: { location: Location; index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start 90%", "end start"],
   });
-
-  const imageY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    reduceMotion ? ["0%", "0%"] : ["-8%", "8%"],
-  );
+  const imageY = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["-8%", "8%"]);
 
   return (
-    <div ref={cardRef} className="relative">
+    <div ref={cardRef}>
       <motion.article
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -80,145 +66,80 @@ const DesktopLocationCard = ({ location, index }: DesktopCardProps) => {
           className="absolute inset-0 h-full w-full object-cover"
           style={{ y: imageY, objectPosition: location.objectPosition }}
         />
-
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/30" />
-
-        <div className="absolute right-5 top-5 z-20 text-6xl font-headline font-extrabold leading-none text-primary/20 md:text-8xl">
-          0{index + 1}
-        </div>
-
-        <div className="absolute inset-x-0 bottom-0 z-20 p-6 md:p-8">
-          <span className="mb-2 block text-xs font-display uppercase tracking-[0.3em] text-accent">
-            Mumbai
-          </span>
-          <h3 className="mb-1 text-3xl font-headline font-bold text-foreground md:text-4xl">
-            {location.name}
-          </h3>
-          <p className="mb-1 text-sm italic text-foreground/75 md:text-base">
-            {location.tagline}
-          </p>
-          <p className="text-xs text-muted-foreground md:text-sm">📍 {location.address}</p>
-        </div>
+        <CardContent location={location} index={index} />
       </motion.article>
     </div>
   );
 };
 
-interface MobileDeckCardProps {
-  index: number;
-  location: Location;
-  progress: MotionValue<number>;
-  totalCards: number;
-}
+/* ─── Mobile sticky card (pure CSS sticky — no JS scroll tracking) ─── */
 
-const MobileDeckCard = ({ location, index, progress, totalCards }: MobileDeckCardProps) => {
-  const reduceMotion = useReducedMotion();
-  const segment = 1 / totalCards;
-  const start = index * segment;
-  const reveal = Math.min(1, start + segment * 0.34);
-  const end = Math.min(1, start + segment);
-
-  const cardY = useTransform(
-    progress,
-    index === 0 ? [0, 1] : [start, reveal],
-    index === 0 ? ["0%", "0%"] : ["110%", "0%"],
-  );
-
-  const imageY = useTransform(
-    progress,
-    [start, end],
-    reduceMotion ? ["0%", "0%"] : ["-8%", "10%"],
-  );
-
-  const contentY = useTransform(
-    progress,
-    [start, end],
-    reduceMotion ? [0, 0] : [12, -10],
-  );
-
-  const scale = useTransform(
-    progress,
-    index === 0 ? [0, 1] : [start, reveal],
-    reduceMotion || index === 0 ? [1, 1] : [0.985, 1],
-  );
-
+const MobileStickyCard = ({ location, index }: { location: Location; index: number }) => {
   return (
-    <motion.article
-      className="absolute inset-0 overflow-hidden rounded-[1.85rem] border border-border bg-card shadow-2xl"
-      style={{ y: cardY, scale, zIndex: index + 1 }}
-    >
-      <motion.img
-        src={location.image}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-xl"
-        style={{ objectPosition: location.objectPosition }}
-      />
-
-      <motion.img
-        src={location.image}
-        alt={`Rowdy Cafe ${location.name}`}
-        className="absolute inset-0 h-full w-full object-contain px-2 pt-2 pb-20"
-        style={{ y: imageY, objectPosition: location.objectPosition }}
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/85 to-transparent" />
-
-      <div className="absolute right-5 top-5 z-20 text-6xl font-headline font-extrabold leading-none text-primary/20">
-        0{index + 1}
-      </div>
-
-      <motion.div style={{ y: contentY }} className="absolute inset-x-0 bottom-0 z-20 p-6">
-        <span className="mb-2 block text-xs font-display uppercase tracking-[0.3em] text-accent">
-          Mumbai
-        </span>
-        <h3 className="mb-1 text-3xl font-headline font-bold text-foreground">
-          {location.name}
-        </h3>
-        <p className="mb-1 text-sm italic text-foreground/75">{location.tagline}</p>
-        <p className="text-xs text-muted-foreground">📍 {location.address}</p>
-      </motion.div>
-    </motion.article>
-  );
-};
-
-const MobileLocationsDeck = () => {
-  const deckRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: deckRef,
-    offset: ["start start", "end end"],
-  });
-
-  return (
+    /* Each card lives in a tall scroll-track div. As the user scrolls past
+       this track, the sticky card stays pinned; the next track's card
+       slides up on top of it naturally via higher z-index. */
     <div
-      ref={deckRef}
-      className="relative mx-auto max-w-[340px]"
-      style={{ height: `${locations.length * 88}svh` }}
+      className="relative"
+      style={{
+        height: "100vh",
+        zIndex: index + 1,
+      }}
     >
-      <div className="sticky top-20 h-[76svh] min-h-[520px] overflow-hidden">
-        <div className="relative h-full w-full">
-          {locations.map((location, index) => (
-            <MobileDeckCard
-              key={location.name}
-              index={index}
-              location={location}
-              progress={scrollYProgress}
-              totalCards={locations.length}
-            />
-          ))}
-        </div>
-      </div>
+      <article
+        className="sticky overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_-8px_30px_rgba(0,0,0,0.45)]"
+        style={{
+          top: "5rem",          /* 80px from top */
+          height: "70vh",
+          minHeight: "420px",
+        }}
+      >
+        {/* Background image — object-contain so nothing important is cropped */}
+        <img
+          src={location.image}
+          alt={`Rowdy Cafe ${location.name}`}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: location.objectPosition }}
+        />
+
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/90 to-transparent" />
+
+        <CardContent location={location} index={index} />
+      </article>
     </div>
   );
 };
+
+/* ─── Shared card content overlay ─── */
+
+const CardContent = ({ location, index }: { location: Location; index: number }) => (
+  <>
+    <div className="absolute right-5 top-4 z-20 text-6xl font-headline font-extrabold leading-none text-primary/15 md:text-8xl">
+      0{index + 1}
+    </div>
+    <div className="absolute inset-x-0 bottom-0 z-20 p-5 md:p-8">
+      <span className="mb-1.5 block text-xs font-display uppercase tracking-[0.3em] text-accent">
+        Mumbai
+      </span>
+      <h3 className="mb-1 text-2xl font-headline font-bold text-foreground md:text-4xl">
+        {location.name}
+      </h3>
+      <p className="mb-0.5 text-sm italic text-foreground/75">{location.tagline}</p>
+      <p className="text-xs text-muted-foreground">📍 {location.address}</p>
+    </div>
+  </>
+);
+
+/* ─── Section ─── */
 
 const LocationsSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="section-padding relative overflow-visible section-dark-b noise-bg">
+    <section className="relative section-dark-b noise-bg py-14 md:py-32 px-4 md:px-8">
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
           <div className="mb-10 text-center md:mb-14">
@@ -235,7 +156,11 @@ const LocationsSection = () => {
         </AnimatedSection>
 
         {isMobile ? (
-          <MobileLocationsDeck />
+          <div className="mx-auto max-w-[340px]">
+            {locations.map((location, index) => (
+              <MobileStickyCard key={location.name} location={location} index={index} />
+            ))}
+          </div>
         ) : (
           <div className="grid grid-cols-2 gap-6">
             {locations.map((location, index) => (
