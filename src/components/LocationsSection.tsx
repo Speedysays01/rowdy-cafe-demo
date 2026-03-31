@@ -22,6 +22,7 @@ const locations = [
     image: vileParleImg,
     objectPosition: "center 42%",
     mobileObjectPosition: "center 38%",
+    link: "https://share.google/aWfdWFQUPbYKAn1Jz",
   },
   {
     name: "Thane",
@@ -30,6 +31,7 @@ const locations = [
     image: thaneImg,
     objectPosition: "center 45%",
     mobileObjectPosition: "center 42%",
+    link: "https://share.google/dofDisuqhlExLC8M5",
   },
   {
     name: "Vidya Vihar",
@@ -38,6 +40,7 @@ const locations = [
     image: viharImg,
     objectPosition: "center 24%",
     mobileObjectPosition: "center 20%",
+    link: "https://share.google/nZ0mpAdxrHeV8V5qw",
   },
   {
     name: "Navi Mumbai",
@@ -46,6 +49,7 @@ const locations = [
     image: naviMumbaiImg,
     objectPosition: "center 38%",
     mobileObjectPosition: "center 34%",
+    link: "https://share.google/FB0wyoX1L679Rhvr1",
   },
 ] as const;
 
@@ -75,7 +79,14 @@ const LocationCardDetails = ({
         {location.name}
       </h3>
       <p className="mb-0.5 text-sm italic text-foreground/75 md:text-base">{location.tagline}</p>
-      <p className="text-xs text-muted-foreground md:text-sm">📍 {location.address}</p>
+      <a
+        href={location.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-accent md:text-sm"
+      >
+        📍 {location.address}
+      </a>
     </div>
   </>
 );
@@ -92,6 +103,12 @@ const DesktopLocationCard = ({ location, index }: { index: number; location: Loc
 
   return (
     <div ref={cardRef}>
+      <a
+        href={location.image ? location.link : "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
       <motion.article
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -108,6 +125,7 @@ const DesktopLocationCard = ({ location, index }: { index: number; location: Loc
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
         <LocationCardDetails index={index} location={location} />
       </motion.article>
+      </a>
     </div>
   );
 };
@@ -181,6 +199,16 @@ const MobileLocationsShowcase = () => {
 
                   <LocationCardDetails compact index={index} location={location} />
                 </motion.article>
+                {isActive && (
+                  <a
+                    href={location.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 z-30"
+                    style={{ zIndex: locations.length + 1 }}
+                    aria-label={`Open ${location.name} on Google Maps`}
+                  />
+                )}
               );
             })}
           </AspectRatio>
