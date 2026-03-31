@@ -13,7 +13,7 @@ const locations = [
   { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra", image: naviMumbaiImg },
 ];
 
-const ParallaxCard = ({
+const LocationCard = ({
   location,
   index,
 }: {
@@ -26,59 +26,62 @@ const ParallaxCard = ({
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [80, -80]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.92, 1, 1, 0.95]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.4, 1, 1, 0.6]);
+  // Parallax on the background image only
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
     <motion.div
       ref={cardRef}
-      style={{ y, scale, opacity }}
-      className="sticky top-24 mb-8 md:mb-12"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
       <div
         className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer"
-        style={{ height: "clamp(320px, 55vh, 500px)" }}
+        style={{ height: "clamp(280px, 50vh, 420px)" }}
       >
-        {/* Location image */}
-        <img
+        {/* Parallax image */}
+        <motion.img
           src={location.image}
           alt={`Rowdy Cafe ${location.name}`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-110"
+          style={{ y: imgY }}
         />
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent z-10" />
 
         {/* Location number */}
-        <div className="absolute top-5 right-6 z-20">
+        <div className="absolute top-4 right-5 z-20">
           <span
-            className="text-7xl md:text-9xl font-headline font-extrabold leading-none"
-            style={{ color: "hsl(48 96% 53% / 0.12)" }}
+            className="text-6xl md:text-8xl font-headline font-extrabold leading-none"
+            style={{ color: "hsl(48 96% 53% / 0.15)" }}
           >
             0{index + 1}
           </span>
         </div>
 
         {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 z-20">
-          <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-2 block">
+        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-20">
+          <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-1.5 block">
             Mumbai
           </span>
-          <h3 className="text-3xl md:text-5xl font-headline font-bold text-foreground mb-2">
+          <h3 className="text-2xl md:text-4xl font-headline font-bold text-foreground mb-1">
             {location.name}
           </h3>
-          <p className="text-foreground/70 font-body text-sm md:text-base mb-1 italic">
+          <p className="text-foreground/70 font-body text-sm mb-0.5 italic">
             {location.tagline}
           </p>
-          <p className="text-muted-foreground font-body text-xs md:text-sm">
+          <p className="text-muted-foreground font-body text-xs">
             📍 {location.address}
           </p>
         </div>
 
         {/* Hover glow */}
-        <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ boxShadow: "inset 0 0 80px hsl(48 96% 53% / 0.08)" }}
+        <div
+          className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+          style={{ boxShadow: "inset 0 0 80px hsl(48 96% 53% / 0.1)" }}
         />
       </div>
     </motion.div>
@@ -90,7 +93,7 @@ const LocationsSection = () => {
     <section className="section-padding relative noise-bg section-dark-b overflow-hidden">
       <div className="container mx-auto max-w-4xl relative z-10">
         <AnimatedSection>
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-10 md:mb-14">
             <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
               📍 Our Locations
             </span>
@@ -103,9 +106,9 @@ const LocationsSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {locations.map((location, index) => (
-            <ParallaxCard key={location.name} location={location} index={index} />
+            <LocationCard key={location.name} location={location} index={index} />
           ))}
         </div>
       </div>
