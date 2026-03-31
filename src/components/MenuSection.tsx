@@ -358,7 +358,7 @@ const MenuSection = () => {
                         <p className="text-sm font-display font-bold mb-1 group-hover:text-primary transition-colors">
                           {item.name}
                         </p>
-                        <p className="text-[11px] text-muted-foreground font-body">{item.desc}</p>
+                        
                       </TiltCard>
                     </motion.div>
                   ))}
