@@ -31,13 +31,8 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
   const offset = circumference - (progress / 100) * circumference;
 
   return (
-    <motion.div
-      ref={ref}
-      className="rowdy-card p-6 md:p-8 flex flex-col items-center group"
-      whileHover={{ y: -8, boxShadow: "0 0 30px hsl(48 96% 53% / 0.15)" }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
-      <div className="relative w-32 h-32 md:w-36 md:h-36 mb-5">
+    <div ref={ref} className="flex flex-col items-center">
+      <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3">
         <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
           <circle cx="60" cy="60" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
           <circle
@@ -51,13 +46,13 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl">{emoji}</span>
-          <span className="text-2xl md:text-3xl font-headline text-gradient-fire">{progress}%</span>
+          <span className="text-lg">{emoji}</span>
+          <span className="text-xl md:text-2xl font-headline text-gradient-fire">{progress}%</span>
         </div>
       </div>
-      <p className="text-lg md:text-xl font-headline text-center mb-1">{range}</p>
-      <p className="text-xs md:text-sm font-display uppercase tracking-wide text-muted-foreground text-center">{label}</p>
-    </motion.div>
+      <p className="text-sm md:text-base font-headline text-center mb-0.5">{range}</p>
+      <p className="text-[10px] md:text-xs font-display uppercase tracking-wide text-muted-foreground text-center">{label}</p>
+    </div>
   );
 };
 
@@ -73,7 +68,7 @@ const ProfitSection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-10">
+      <div className="flex justify-center items-start gap-10 md:gap-16 mb-10">
         {marginCards.map((m, i) => (
           <AnimatedSection key={i} delay={i * 0.15} direction={i === 0 ? "left" : i === 2 ? "right" : "up"}>
             <CircleProgress {...m} />
