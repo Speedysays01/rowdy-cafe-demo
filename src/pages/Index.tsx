@@ -28,15 +28,11 @@ const Index = () => {
         <HeroSection />
         <FounderSection />
         <MenuSection />
-        <BrushDivider variant="brush" />
         <InvestmentSection />
-        <BrushDivider variant="ember" />
         <ProfitSection />
-        <BrushDivider variant="flame" />
         <ROISection />
-        <BrushDivider variant="glow-line" />
         <BookingSection />
-        <BrushDivider variant="brush" />
+        <ContactSection />
         <ContactSection />
       </div>
     </>
