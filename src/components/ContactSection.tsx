@@ -47,6 +47,9 @@ const ContactSection = () => (
           <div className="rowdy-card p-6 md:p-8 h-full">
             <Mail className="w-8 h-8 text-primary mb-4" />
             <h3 className="font-display font-bold mb-3">Connect</h3>
+            <a href="mailto:Info@rowdycafe.com" className="text-sm text-foreground/80 font-body block hover:text-primary transition-colors mb-2">
+              Info@rowdycafe.com
+            </a>
             <a href="https://www.rowdycafe.com" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 font-body block hover:text-primary transition-colors mb-4">
               www.rowdycafe.com
             </a>
