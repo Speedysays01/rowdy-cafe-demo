@@ -147,19 +147,22 @@ const HeroContent = () => {
             <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-background/80 to-transparent" />
 
             <motion.div
-              className="flex gap-3 w-max"
+              className="flex gap-6 md:gap-10 w-max items-center"
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ x: { duration: 20, repeat: Infinity, ease: "linear" } }}
+              transition={{ x: { duration: 35, repeat: Infinity, ease: "linear" } }}
             >
               {[...features, ...features].map((f, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 flex items-center gap-2.5 px-5 py-2.5 md:px-6 md:py-3 border-2 border-primary/30 bg-background/70 backdrop-blur-sm rounded-full hover:border-primary hover:shadow-[0_0_20px_hsl(48_96%_53%/0.25)] transition-all duration-300 group cursor-default"
+                  className="flex-shrink-0 flex items-center gap-2 group cursor-default"
                 >
                   <f.icon className="w-4 h-4 md:w-5 md:h-5 text-primary group-hover:text-accent transition-colors" />
-                  <span className="text-[10px] md:text-xs font-display uppercase tracking-widest text-foreground/90 whitespace-nowrap font-bold">
+                  <span className="text-[10px] md:text-xs font-display uppercase tracking-widest text-foreground/80 whitespace-nowrap font-bold">
                     {f.text}
                   </span>
+                  {i < [...features, ...features].length - 1 && (
+                    <span className="ml-4 md:ml-8 text-primary/40 text-lg">✦</span>
+                  )}
                 </div>
               ))}
             </motion.div>
