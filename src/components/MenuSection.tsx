@@ -356,7 +356,7 @@ const MenuSection = () => {
                 {/* Extras (gravies for momos) */}
                 {cat.extras && (
                   <div className="mt-5">
-                    <p className="text-[10px] font-display uppercase tracking-widest text-muted-foreground mb-2">
+                    <p className="text-[10px] font-display tracking-widest text-muted-foreground mb-2">
                       Gravies Supplied
                     </p>
                     <div className="flex flex-wrap gap-2">
