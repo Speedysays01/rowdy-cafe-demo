@@ -217,29 +217,6 @@ const MobileLocationsShowcase = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-2">
-          {locations.map((location, index) => {
-            const isActive = index === activeIndex;
-
-            return (
-              <button
-                key={location.name}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`rounded-2xl border px-3 py-3 text-left transition-all duration-300 ${
-                  isActive
-                    ? "border-primary bg-primary/10 text-foreground"
-                    : "border-border bg-card/70 text-muted-foreground"
-                }`}
-              >
-                <span className="block text-[10px] font-display uppercase tracking-[0.28em] text-accent">
-                  0{index + 1}
-                </span>
-                <span className="mt-1 block text-sm font-semibold">{location.name}</span>
-              </button>
-            );
-          })}
-        </div>
       </div>
     </div>
   );
