@@ -103,7 +103,7 @@ const HeroContent = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8"
+            className="flex flex-row gap-2 sm:gap-4 justify-center mb-6 md:mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 6.1 }}
@@ -115,12 +115,12 @@ const HeroContent = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="rounded-full"
             >
-              <Button variant="hero" size="chunky" className="w-full sm:w-auto" asChild>
-                <a href="#booking">🔥 Book Franchise Meeting</a>
+              <Button variant="hero" size="default" className="text-xs px-4 py-3 whitespace-nowrap" asChild>
+                <a href="#booking">🔥 Book Meeting</a>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="heroOutline" size="chunky" className="w-full sm:w-auto" asChild>
+              <Button variant="heroOutline" size="default" className="text-xs px-4 py-3 whitespace-nowrap" asChild>
                 <a href="#menu">Explore Menu →</a>
               </Button>
             </motion.div>
