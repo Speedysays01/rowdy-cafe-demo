@@ -11,7 +11,7 @@ import ROISection from "@/components/ROISection";
 import BookingSection from "@/components/BookingSection";
 import ContactSection from "@/components/ContactSection";
 import SplashScreen from "@/components/SplashScreen";
-import BrushDivider from "@/components/BrushDivider";
+
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -28,15 +28,11 @@ const Index = () => {
         <HeroSection />
         <FounderSection />
         <MenuSection />
-        <BrushDivider variant="brush" />
         <InvestmentSection />
-        <BrushDivider variant="ember" />
         <ProfitSection />
-        <BrushDivider variant="flame" />
         <ROISection />
-        <BrushDivider variant="glow-line" />
         <BookingSection />
-        <BrushDivider variant="brush" />
+        <ContactSection />
         <ContactSection />
       </div>
     </>
