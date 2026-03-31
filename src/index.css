@@ -256,26 +256,6 @@
   .brush-heading {
     color: hsl(0 0% 5%);
     -webkit-text-fill-color: hsl(0 0% 5%);
-    position: relative;
-    padding: 0.05em 0.35em;
-    background: none;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-    isolation: isolate;
-  }
-
-  .brush-heading::before {
-    content: '';
-    position: absolute;
-    inset: -0.05em -0.1em;
-    z-index: -1;
-    background-color: hsl(48 96% 53%);
-    border-radius: 4px 8px 3px 6px;
-  }
-
-  .brush-heading {
-    color: hsl(0 0% 5%);
-    -webkit-text-fill-color: hsl(0 0% 5%);
     padding: 0.02em 0.3em;
     background-color: hsl(48 96% 53%);
     border-radius: 4px 8px 3px 6px;
