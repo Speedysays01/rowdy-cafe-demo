@@ -135,8 +135,8 @@
 
   .section-white .rowdy-card {
     background-color: hsl(0 0% 100%);
-    border-color: hsl(0 0% 85%);
-    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.06), 4px 4px 0px hsl(48 96% 53% / 0.1);
+    border-color: hsl(0 0% 90%);
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.04);
   }
 
   .section-white .rowdy-card::before {
