@@ -104,12 +104,12 @@ const DesktopLocationCard = ({ location, index }: { index: number; location: Loc
   return (
     <div ref={cardRef}>
       <a
-        href={location.image ? location.link : "#"}
+        href={location.link}
         target="_blank"
         rel="noopener noreferrer"
         className="block"
       >
-      <motion.article
+        <motion.article
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
@@ -124,7 +124,7 @@ const DesktopLocationCard = ({ location, index }: { index: number; location: Loc
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
         <LocationCardDetails index={index} location={location} />
-      </motion.article>
+        </motion.article>
       </a>
     </div>
   );
@@ -199,16 +199,6 @@ const MobileLocationsShowcase = () => {
 
                   <LocationCardDetails compact index={index} location={location} />
                 </motion.article>
-                {isActive && (
-                  <a
-                    href={location.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 z-30"
-                    style={{ zIndex: locations.length + 1 }}
-                    aria-label={`Open ${location.name} on Google Maps`}
-                  />
-                )}
               );
             })}
           </AspectRatio>
