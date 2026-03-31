@@ -165,27 +165,13 @@ const MobileLocationsShowcase = () => {
               >
                 <img
                   src={location.image}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 h-full w-full scale-110 object-cover opacity-30 blur-xl"
-                  style={{ objectPosition: location.objectPosition }}
-                />
-
-                <motion.img
-                  src={location.image}
                   alt={`Rowdy Cafe ${location.name}`}
-                  className="absolute inset-x-3 top-3 h-[58%] w-[calc(100%-1.5rem)] object-contain"
+                  className="absolute inset-0 h-full w-full object-cover"
                   style={{ objectPosition: location.objectPosition }}
-                  animate={isActive && !reduceMotion ? { y: [0, -8, 0] } : { y: 0 }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/95 to-transparent" />
-
-                <div className="absolute left-5 top-5 z-20 rounded-full border border-border bg-card/80 px-3 py-1 text-[10px] font-display uppercase tracking-[0.28em] text-accent backdrop-blur-sm">
-                  Swipe the card
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/90 to-transparent" />
 
                 <LocationCardDetails compact index={index} location={location} />
               </motion.article>
