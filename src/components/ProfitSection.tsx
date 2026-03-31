@@ -68,7 +68,7 @@ const ProfitSection = () => (
         </div>
       </AnimatedSection>
 
-      <div className="flex justify-center items-start gap-10 md:gap-16 mb-10">
+      <div className="flex justify-center items-start gap-6 md:gap-16 mb-10 px-2">
         {marginCards.map((m, i) => (
           <AnimatedSection key={i} delay={i * 0.15} direction={i === 0 ? "left" : i === 2 ? "right" : "up"}>
             <CircleProgress {...m} />
