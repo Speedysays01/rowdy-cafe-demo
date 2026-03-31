@@ -51,9 +51,9 @@ const HeroContent = () => {
       </video>
 
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-background/70" />
+      <div className="absolute inset-0 bg-background/75" />
 
-      {/* Main content — takes all available space, centered */}
+      {/* Main content */}
       <div className="flex-1 flex items-center justify-center relative z-20 px-4 pt-16">
         <div className="max-w-5xl mx-auto text-center w-full">
           {/* Rowdy Man — punch entry */}
@@ -84,25 +84,22 @@ const HeroContent = () => {
 
           {/* Main heading */}
           <motion.h1
-            className="text-2xl sm:text-4xl md:text-7xl font-headline leading-[0.9] mb-2 md:mb-3"
+            className="text-3xl sm:text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-3 md:mb-4"
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 5.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="block">Start Business in</span>
-            <span className="text-gradient-fire block text-3xl sm:text-5xl md:text-8xl relative animate-pulse-glow">
+            <span className="block">Start Your Business in</span>
+            <span className="text-gradient-fire block text-4xl sm:text-6xl md:text-8xl relative">
               {displayed}
             </span>
-            <span className="block text-lg sm:text-3xl md:text-6xl mt-1">
-              No Chef. No Hassle.
-            </span>
-            <span className="block text-lg sm:text-3xl md:text-6xl">
-              <span className="text-gradient">60% Margins</span>.
+            <span className="block text-xl sm:text-3xl md:text-5xl mt-2 font-medium text-foreground/80">
+              No Chef. No Hassle. <span className="text-gradient">60% Margins</span>.
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-xs sm:text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto mb-3 md:mb-5 font-body"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 md:mb-6 font-body"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 5.8 }}
@@ -112,24 +109,24 @@ const HeroContent = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center mb-4 md:mb-6"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 6.1 }}
           >
             <motion.div
-              whileHover={{ scale: 1.08 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              animate={{ boxShadow: ["0 0 0px hsl(48 96% 53% / 0)", "0 0 30px hsl(48 96% 53% / 0.4)", "0 0 0px hsl(48 96% 53% / 0)"] }}
+              animate={{ boxShadow: ["0 0 0px hsl(48 96% 53% / 0)", "0 0 30px hsl(48 96% 53% / 0.3)", "0 0 0px hsl(48 96% 53% / 0)"] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="rounded-none"
+              className="rounded-full"
             >
-              <Button variant="hero" size="chunky" className="w-full sm:w-auto text-xs sm:text-sm md:text-base whitespace-nowrap" asChild>
+              <Button variant="hero" size="chunky" className="w-full sm:w-auto" asChild>
                 <a href="#booking">🔥 Book Franchise Meeting</a>
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="heroOutline" size="chunky" className="w-full sm:w-auto text-sm md:text-base" asChild>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button variant="heroOutline" size="chunky" className="w-full sm:w-auto" asChild>
                 <a href="#menu">Explore Menu →</a>
               </Button>
             </motion.div>
@@ -142,7 +139,6 @@ const HeroContent = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 6.5, duration: 0.6 }}
           >
-            {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-background/80 to-transparent" />
             <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-background/80 to-transparent" />
 
@@ -157,7 +153,7 @@ const HeroContent = () => {
                   className="flex-shrink-0 flex items-center gap-2 group cursor-default"
                 >
                   <f.icon className="w-4 h-4 md:w-5 md:h-5 text-primary group-hover:text-accent transition-colors" />
-                  <span className="text-[10px] md:text-xs font-display uppercase tracking-widest text-foreground/80 whitespace-nowrap font-bold">
+                  <span className="text-xs md:text-sm font-display tracking-wide text-foreground/80 whitespace-nowrap font-medium">
                     {f.text}
                   </span>
                   {i < [...features, ...features].length - 1 && (
@@ -170,14 +166,14 @@ const HeroContent = () => {
         </div>
       </div>
 
-      {/* Scroll indicator — fixed at bottom, won't overlap content */}
+      {/* Scroll indicator */}
       <motion.div
         className="relative z-30 flex flex-col items-center gap-0.5 pb-3 md:pb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 7.3 }}
       >
-        <span className="text-[10px] font-display uppercase tracking-widest text-primary/60">Scroll</span>
+        <span className="text-xs font-display tracking-widest text-primary/60">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

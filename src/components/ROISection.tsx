@@ -62,12 +62,12 @@ const ROISection = () => {
       <div className="container mx-auto max-w-5xl relative z-10">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+            <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
               📊 Projections
             </span>
-            <h2 className="text-4xl md:text-6xl font-headline text-center mb-3">
+            <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-3">
               Projected Cafe{" "}
-              <span className="text-gradient-fire brush-heading">Profit Potential</span>
+              <span className="text-gradient-fire">Profit Potential</span>
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg">
               Realistic projections based on existing outlet performance.
@@ -82,9 +82,9 @@ const ROISection = () => {
               <motion.button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`px-3 sm:px-5 py-2.5 text-xs sm:text-sm font-display uppercase tracking-wide transition-all border-2 rounded-xl ${
+                className={`px-4 sm:px-6 py-3 text-xs sm:text-sm font-display font-medium tracking-wide transition-all border rounded-2xl ${
                   active === i
-                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.3)]"
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.2)]"
                     : "bg-transparent text-muted-foreground border-border hover:border-primary/50 hover:text-primary"
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -112,19 +112,18 @@ const ROISection = () => {
               { label: "Gross Margin (60%)", value: s.gross },
             ].map((r, i) => (
               <div key={i} className="rowdy-card p-3 sm:p-4 md:p-6 text-center flex flex-col items-center justify-center min-h-[80px] sm:min-h-[100px] md:min-h-[120px]">
-                <p className="text-[8px] sm:text-[10px] md:text-xs font-display uppercase tracking-wider text-muted-foreground mb-1 leading-tight">
+                <p className="text-[8px] sm:text-[10px] md:text-xs font-display tracking-wider text-muted-foreground mb-1 leading-tight">
                   {r.label}
                 </p>
-                <p className="text-xs sm:text-lg md:text-2xl font-headline text-gradient-fire whitespace-nowrap">{r.value}</p>
+                <p className="text-xs sm:text-lg md:text-2xl font-headline font-bold text-gradient-fire whitespace-nowrap">{r.value}</p>
               </div>
             ))}
           </div>
 
           {/* Expenses + Profit */}
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Expenses */}
             <div className="rowdy-card p-5 md:p-8">
-              <p className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-4">
+              <p className="text-xs font-display tracking-widest text-muted-foreground mb-4">
                 Estimated Expenses
               </p>
               <div className="space-y-3">
@@ -136,32 +135,31 @@ const ROISection = () => {
                 ))}
               </div>
               <div className="flex justify-between items-center mt-4 pt-3 border-t-2 border-primary/30">
-                <span className="text-sm font-display uppercase">Total Expenses</span>
-                <span className="text-lg font-headline text-destructive">{s.totalExp}</span>
+                <span className="text-sm font-display font-semibold">Total Expenses</span>
+                <span className="text-lg font-headline font-bold text-destructive">{s.totalExp}</span>
               </div>
             </div>
 
-            {/* Profit highlight */}
             <div className="rowdy-card p-5 md:p-8 flex flex-col items-center justify-center text-center">
-              <p className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-3">
+              <p className="text-xs font-display tracking-widest text-muted-foreground mb-3">
                 Monthly Net Profit
               </p>
               <motion.p
-                className="text-4xl md:text-5xl font-headline text-gradient-fire mb-2"
+                className="text-4xl md:text-5xl font-headline font-bold text-gradient-fire mb-2"
                 animate={{ scale: [1, 1.03, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
                 {s.netProfit}
               </motion.p>
-              <div className="mt-3 w-full max-w-[200px] h-3 bg-secondary border border-border overflow-hidden">
+              <div className="mt-3 w-full max-w-[200px] h-3 bg-secondary rounded-full border border-border overflow-hidden">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-primary to-accent"
+                  className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${s.netMargin * 3}%` }}
                   transition={{ duration: 1, ease: "easeOut" }}
                 />
               </div>
-              <p className="text-sm font-display text-primary mt-2">
+              <p className="text-sm font-display text-primary mt-2 font-medium">
                 Net Margin: {s.netMargin}%
               </p>
             </div>

@@ -14,24 +14,24 @@ const FounderSection = () => (
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
         <div className="text-center mb-14">
-          <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+          <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
             🏆 Leadership
           </span>
-          <h2 className="text-4xl md:text-6xl font-headline text-center mb-2">
-            <span className="text-gradient-fire brush-heading">10+ Years</span> of Food Industry Experience
+          <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-2">
+            <span className="text-gradient-fire">10+ Years</span> of Food Industry Experience
           </h2>
         </div>
       </AnimatedSection>
 
       <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
         <AnimatedSection direction="left">
-          <motion.div className="rowdy-card p-2 overflow-hidden" whileHover={{ scale: 1.02, rotate: -1 }}>
-            <div className="aspect-[3/4] relative overflow-hidden">
+          <motion.div className="rowdy-card p-2 overflow-hidden" whileHover={{ scale: 1.02 }}>
+            <div className="aspect-[3/4] relative overflow-hidden rounded-xl">
               <img src={ownerImg} alt="Varun Kapoor - Founder" className="w-full h-full object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                <h3 className="text-3xl font-headline">Varun Kapoor</h3>
-                <p className="text-primary font-display uppercase tracking-wider text-sm">Founder, Rowdy Cafe</p>
+                <h3 className="text-3xl font-headline font-bold">Varun Kapoor</h3>
+                <p className="text-primary font-display tracking-wide text-sm font-medium">Founder, Rowdy Cafe</p>
               </div>
             </div>
           </motion.div>
@@ -49,10 +49,10 @@ const FounderSection = () => (
               <span>Factory located at <span className="text-foreground font-semibold">Kopar Khairane, Navi Mumbai</span></span>
             </div>
             <div className="border-t border-border/40 pt-5">
-              <p className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-3">Trusted supply partner to</p>
+              <p className="text-xs font-display tracking-widest text-muted-foreground mb-3">Trusted supply partner to</p>
               <div className="flex flex-nowrap gap-3">
                 {["Social", "Radisson", "Taj"].map((brand) => (
-                  <span key={brand} className="rowdy-card px-4 py-2 text-sm font-display uppercase tracking-wide text-primary">{brand}</span>
+                  <span key={brand} className="rowdy-card px-4 py-2 text-sm font-display tracking-wide text-primary font-semibold">{brand}</span>
                 ))}
               </div>
             </div>
@@ -71,7 +71,7 @@ const FounderSection = () => (
                   whileHover={{ x: 4 }}
                 >
                   <b.icon className="w-5 h-5 text-primary flex-shrink-0 group-hover:text-accent transition-colors" />
-                  <span className="text-xs font-display uppercase tracking-wide">{b.label}</span>
+                  <span className="text-xs font-display tracking-wide font-medium">{b.label}</span>
                 </motion.div>
               ))}
             </motion.div>

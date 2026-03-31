@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-sm border-b-2 border-primary/30" : ""
+        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : ""
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -41,19 +41,19 @@ const Navbar = () => {
               <Link
                 key={l.href}
                 to={l.href}
-                className="text-sm font-display uppercase tracking-wider text-foreground/70 hover:text-primary transition-colors relative group"
+                className="text-sm font-display font-medium tracking-wide text-foreground/70 hover:text-primary transition-colors relative group"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300" />
               </Link>
             ) : (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-display uppercase tracking-wider text-foreground/70 hover:text-primary transition-colors relative group"
+                className="text-sm font-display font-medium tracking-wide text-foreground/70 hover:text-primary transition-colors relative group"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full group-hover:w-full transition-all duration-300" />
               </a>
             )
           )}
@@ -70,7 +70,6 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -78,14 +77,12 @@ const Navbar = () => {
               className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[998] md:hidden"
               onClick={() => setOpen(false)}
             />
-            {/* Sidebar */}
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 left-0 bottom-0 w-[280px] border-r-2 border-primary/30 z-[999] md:hidden flex flex-col"
-              style={{ backgroundColor: "hsl(0 0% 2%)" }}
+              className="fixed top-0 left-0 bottom-0 w-[280px] border-r border-border z-[999] md:hidden flex flex-col bg-background"
             >
               <div className="flex items-center justify-between p-4 border-b border-border">
                 <img src={logo} alt="Rowdy Cafe" className="h-10 w-auto" />
@@ -100,7 +97,7 @@ const Navbar = () => {
                       key={l.href}
                       to={l.href}
                       onClick={() => setOpen(false)}
-                      className="text-foreground/70 hover:text-primary transition-colors font-display uppercase tracking-wider text-lg"
+                      className="text-foreground/70 hover:text-primary transition-colors font-display font-medium tracking-wide text-lg"
                     >
                       {l.label}
                     </Link>
@@ -109,7 +106,7 @@ const Navbar = () => {
                       key={l.href}
                       href={l.href}
                       onClick={() => setOpen(false)}
-                      className="text-foreground/70 hover:text-primary transition-colors font-display uppercase tracking-wider text-lg"
+                      className="text-foreground/70 hover:text-primary transition-colors font-display font-medium tracking-wide text-lg"
                     >
                       {l.label}
                     </a>
