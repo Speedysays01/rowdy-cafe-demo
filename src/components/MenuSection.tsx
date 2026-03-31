@@ -363,7 +363,7 @@ const MenuSection = () => {
                       {cat.extras.map((e) => (
                         <span
                           key={e}
-                          className="px-3 py-1 text-[10px] font-display uppercase tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full"
+                          className="px-3 py-1 text-[10px] font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
                         >
                           {e}
                         </span>
