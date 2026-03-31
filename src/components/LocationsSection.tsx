@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { AspectRatio } from "./ui/aspect-ratio";
 import vileParleImg from "@/assets/vile_parle.jpg";
 import thaneImg from "@/assets/thane.jpg";
 import viharImg from "@/assets/vihar.webp";
@@ -20,6 +21,7 @@ const locations = [
     address: "Vile Parle West, Mumbai",
     image: vileParleImg,
     objectPosition: "center 42%",
+    mobileObjectPosition: "center 38%",
   },
   {
     name: "Thane",
@@ -27,6 +29,7 @@ const locations = [
     address: "Thane West, Mumbai",
     image: thaneImg,
     objectPosition: "center 45%",
+    mobileObjectPosition: "center 42%",
   },
   {
     name: "Vidya Vihar",
@@ -34,6 +37,7 @@ const locations = [
     address: "Vidya Vihar, Mumbai",
     image: viharImg,
     objectPosition: "center 24%",
+    mobileObjectPosition: "center 20%",
   },
   {
     name: "Navi Mumbai",
@@ -41,6 +45,7 @@ const locations = [
     address: "Navi Mumbai, Maharashtra",
     image: naviMumbaiImg,
     objectPosition: "center 38%",
+    mobileObjectPosition: "center 34%",
   },
 ] as const;
 
@@ -136,47 +141,49 @@ const MobileLocationsShowcase = () => {
           className="absolute inset-x-6 top-10 h-[24rem] rounded-full bg-primary/15 blur-3xl"
         />
 
-        <div className="relative mb-5 h-[34rem]">
-          {locations.map((location, index) => {
-            const stackIndex = wrapIndex(index - activeIndex);
-            const isActive = stackIndex === 0;
-            const isVisible = stackIndex < 3;
+        <div className="relative mb-5">
+          <AspectRatio ratio={5 / 4} className="relative">
+            {locations.map((location, index) => {
+              const stackIndex = wrapIndex(index - activeIndex);
+              const isActive = stackIndex === 0;
+              const isVisible = stackIndex < 3;
 
-            return (
-              <motion.article
-                key={location.name}
-                drag={isActive && !reduceMotion ? "x" : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.14}
-                onDragEnd={isActive ? handleDragEnd : undefined}
-                initial={false}
-                animate={{
-                  opacity: isVisible ? 1 - stackIndex * 0.22 : 0,
-                  rotate: stackIndex === 1 ? -4 : stackIndex === 2 ? 4 : 0,
-                  scale: 1 - stackIndex * 0.05,
-                  x: 0,
-                  y: stackIndex * 18,
-                }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                style={{ zIndex: locations.length - stackIndex }}
-                className={`absolute inset-0 overflow-hidden rounded-[1.85rem] border border-border bg-card shadow-2xl ${
-                  isActive ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
-                }`}
-              >
-                <img
-                  src={location.image}
-                  alt={`Rowdy Cafe ${location.name}`}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  style={{ objectPosition: location.objectPosition }}
-                />
+              return (
+                <motion.article
+                  key={location.name}
+                  drag={isActive && !reduceMotion ? "x" : false}
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.14}
+                  onDragEnd={isActive ? handleDragEnd : undefined}
+                  initial={false}
+                  animate={{
+                    opacity: isVisible ? 1 - stackIndex * 0.18 : 0,
+                    rotate: stackIndex === 1 ? -3 : stackIndex === 2 ? 3 : 0,
+                    scale: 1 - stackIndex * 0.035,
+                    x: 0,
+                    y: stackIndex * 6,
+                  }}
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ zIndex: locations.length - stackIndex }}
+                  className={`absolute inset-0 overflow-hidden rounded-[1.85rem] border border-border bg-card shadow-2xl ${
+                    isActive ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
+                  }`}
+                >
+                  <img
+                    src={location.image}
+                    alt={`Rowdy Cafe ${location.name}`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ objectPosition: location.mobileObjectPosition }}
+                  />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/90 to-transparent" />
 
-                <LocationCardDetails compact index={index} location={location} />
-              </motion.article>
-            );
-          })}
+                  <LocationCardDetails compact index={index} location={location} />
+                </motion.article>
+              );
+            })}
+          </AspectRatio>
         </div>
 
         <div className="mb-4 flex items-center justify-between gap-3">
