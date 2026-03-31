@@ -315,7 +315,7 @@ const MenuSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* --- Active Category Content --- */}
+        {/* --- Active Category Content (Carousel) --- */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -324,66 +324,7 @@ const MenuSection = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Hero image + info row */}
-            <div className="grid md:grid-cols-5 gap-6 md:gap-8 mb-8">
-              <div className="md:col-span-2">
-                <TiltCard className="overflow-hidden border border-border hover:border-primary/40 rounded-2xl h-full">
-                  <div className="relative overflow-hidden aspect-square md:aspect-auto md:h-full group">
-                    <img
-                      src={cat.heroImage}
-                      alt={cat.label}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-                  </div>
-                </TiltCard>
-              </div>
-
-              <div className="md:col-span-3 flex flex-col justify-center">
-                <h3 className="text-3xl md:text-4xl font-headline font-bold mb-2">{cat.label}</h3>
-                <p className="text-primary font-display text-sm tracking-wide mb-5 font-medium">
-                  {cat.tagline}
-                </p>
-
-                {/* Item cards grid with 3D tilt */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {cat.items.map((item, i) => (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.06 }}
-                    >
-                      <TiltCard className="rowdy-card p-4 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30">
-                        <p className="text-sm font-display font-bold mb-1 group-hover:text-primary transition-colors">
-                          {item.name}
-                        </p>
-                        <p className="text-[11px] text-muted-foreground font-body">{item.desc}</p>
-                      </TiltCard>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Extras (gravies for momos) */}
-                {cat.extras && (
-                  <div className="mt-5">
-                    <p className="text-[10px] font-display tracking-widest text-muted-foreground mb-2">
-                      Gravies Supplied
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {cat.extras.map((e) => (
-                        <span
-                          key={e}
-                          className="px-3 py-1 text-[10px] font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
-                        >
-                          {e}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+            <CategoryCarousel cat={cat} />
           </motion.div>
         </AnimatePresence>
 
