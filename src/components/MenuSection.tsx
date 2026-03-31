@@ -386,7 +386,7 @@ const MenuSection = () => {
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div>
                 <Sparkles className="w-6 h-6 text-accent mb-3" />
-                <h3 className="text-2xl md:text-3xl font-headline mb-2">
+                <h3 className="text-2xl md:text-3xl font-headline font-bold mb-2">
                   New Innovations Every{" "}
                   <span className="text-gradient-fire">4–6 Months</span>
                 </h3>
