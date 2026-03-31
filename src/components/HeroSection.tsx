@@ -98,14 +98,8 @@ const HeroContent = () => {
             </span>
           </motion.h1>
 
-          <motion.p
-            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-4 md:mb-6 font-body"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 5.8 }}
-          >
-            Join India's fastest growing factory-to-store cafe franchise partnership.
-          </motion.p>
+
+
 
           {/* CTA Buttons */}
           <motion.div
