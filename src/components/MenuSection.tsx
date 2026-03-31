@@ -184,19 +184,18 @@ const MenuSection = () => {
         {/* --- Header --- */}
         <AnimatedSection>
           <div className="text-center mb-4">
-            <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+            <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
               🔥 What We Serve
             </span>
-            <h2 className="text-4xl md:text-7xl font-headline text-center mb-3">
-              <span className="text-gradient-fire brush-heading">100+</span> Trendy Menu Items
+            <h2 className="text-4xl md:text-7xl font-headline font-bold text-center mb-3">
+              <span className="text-gradient-fire">100+</span> Trendy Menu Items
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg max-w-xl mx-auto mb-2">
               Factory-to-store menu designed for speed, consistency and high margins.
             </p>
-            <p className="text-primary font-display text-xs md:text-sm uppercase tracking-widest">
+            <p className="text-primary font-display text-xs md:text-sm tracking-widest font-medium">
               Street food energy. Factory-level consistency.
             </p>
-            {/* Animated underline */}
             <motion.div
               className="mx-auto mt-4 h-[2px] w-40 rounded-full"
               style={{ background: "linear-gradient(90deg, transparent, hsl(var(--flame-orange)), hsl(var(--primary)), hsl(var(--flame-orange)), transparent)" }}
