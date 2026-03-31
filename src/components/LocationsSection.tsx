@@ -34,7 +34,7 @@ const LocationCard = ({ location, index, isMobile, totalCards }: LocationCardPro
   const imageY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : isMobile ? ["-18%", "18%"] : ["-10%", "10%"],
+    reduceMotion ? ["0%", "0%"] : isMobile ? ["-25%", "25%"] : ["-10%", "10%"],
   );
 
   const contentY = useTransform(
@@ -45,20 +45,21 @@ const LocationCard = ({ location, index, isMobile, totalCards }: LocationCardPro
 
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.5, 1],
-    reduceMotion ? [1, 1, 1] : isMobile ? [0.94, 1, 0.98] : [0.98, 1, 1],
+    [0, 0.4, 1],
+    reduceMotion ? [1, 1, 1] : isMobile ? [0.92, 1, 0.96] : [0.98, 1, 1],
   );
 
-  const mobileTopOffset = `${88 + index * 14}px`;
-  const mobileTrackHeight = index === totalCards - 1 ? "h-[78vh]" : "h-[92vh]";
+  // All cards share the same top so they fully overlap like a deck
+  const mobileTopOffset = "80px";
+  const mobileTrackHeight = index === totalCards - 1 ? "h-[70vh]" : "h-[85vh]";
 
   return (
     <div ref={sectionRef} className={isMobile ? `relative ${mobileTrackHeight}` : "relative"}>
       <motion.article
-        className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card ${
-          isMobile ? "sticky h-[68vh] min-h-[460px]" : "h-[420px]"
+        className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-2xl ${
+          isMobile ? "sticky h-[72vh] min-h-[480px]" : "h-[420px]"
         }`}
-        style={isMobile ? { top: mobileTopOffset, scale } : undefined}
+        style={isMobile ? { top: mobileTopOffset, scale, zIndex: index + 1 } : undefined}
       >
         <motion.img
           src={location.image}
