@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import { Package, Flame, ClipboardList, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 import foodMomos from "@/assets/food-tandoori-momos.jpg";
 import foodCorndogs from "@/assets/food-corndogs.jpg";
@@ -376,29 +376,6 @@ const MenuSection = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* --- Factory Supply Highlight --- */}
-        <AnimatedSection delay={0.2}>
-          <div className="grid md:grid-cols-3 gap-5 mt-14 mb-14">
-            {[
-              { icon: Package, title: "Ready-to-Cook", desc: "Pre-prepared ingredients delivered to your outlet" },
-              { icon: Flame, title: "Pre-Marinated", desc: "Tandoor-ready and flavour-locked from factory" },
-              { icon: ClipboardList, title: "Standardized SOPs", desc: "Step-by-step preparation guides for every item" },
-            ].map((f, i) => (
-              <motion.div
-                key={i}
-                className="rowdy-card p-6 md:p-8 text-center group"
-                whileHover={{ y: -6, boxShadow: "0 0 25px hsl(48 96% 53% / 0.12)" }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                <div className="w-12 h-12 mx-auto mb-4 border-2 border-primary/30 group-hover:border-primary group-hover:bg-primary/10 transition-all flex items-center justify-center rounded-full">
-                  <f.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h4 className="text-sm font-display font-bold uppercase mb-1">{f.title}</h4>
-                <p className="text-xs text-muted-foreground font-body">{f.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
 
         {/* --- Innovations --- */}
         <AnimatedSection delay={0.3}>
