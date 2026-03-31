@@ -315,7 +315,7 @@ const MenuSection = () => {
             {/* Hero image + info row */}
             <div className="grid md:grid-cols-5 gap-6 md:gap-8 mb-8">
               <div className="md:col-span-2">
-                <TiltCard className="overflow-hidden border-2 border-border hover:border-primary/40 rounded-sm h-full">
+                <TiltCard className="overflow-hidden border border-border hover:border-primary/40 rounded-2xl h-full">
                   <div className="relative overflow-hidden aspect-square md:aspect-auto md:h-full group">
                     <img
                       src={cat.heroImage}
