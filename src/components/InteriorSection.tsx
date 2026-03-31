@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 
 const InteriorSection = () => (
-  <section className="relative overflow-hidden py-16 md:py-24">
+  <section className="relative overflow-hidden py-16 md:py-24 noise-bg">
     <div className="container mx-auto max-w-5xl px-4 relative z-10">
       <AnimatedSection>
         <div className="text-center mb-6">
