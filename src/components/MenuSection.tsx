@@ -189,10 +189,10 @@ const CategoryCarousel = ({ cat }: { cat: typeof categories[0] }) => {
     emblaApi.on("reInit", onSelect);
     onSelect();
 
-    // Auto-scroll
+    // Auto-scroll in reverse direction
     const interval = setInterval(() => {
-      if (emblaApi.canScrollNext()) emblaApi.scrollNext();
-      else emblaApi.scrollTo(0);
+      if (emblaApi.canScrollPrev()) emblaApi.scrollPrev();
+      else emblaApi.scrollTo(emblaApi.scrollSnapList().length - 1);
     }, 2500);
 
     return () => {
