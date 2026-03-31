@@ -19,28 +19,28 @@ const locations = [
     tagline: "Where it all began",
     address: "Vile Parle West, Mumbai",
     image: vileParleImg,
-    objectPosition: "center center",
+    objectPosition: "center 42%",
   },
   {
     name: "Thane",
     tagline: "The suburban powerhouse",
     address: "Thane West, Mumbai",
     image: thaneImg,
-    objectPosition: "center center",
+    objectPosition: "center 45%",
   },
   {
     name: "Vidya Vihar",
     tagline: "Bold & unstoppable",
     address: "Vidya Vihar, Mumbai",
     image: viharImg,
-    objectPosition: "center 28%",
+    objectPosition: "center 24%",
   },
   {
     name: "Navi Mumbai",
     tagline: "The new frontier",
     address: "Navi Mumbai, Maharashtra",
     image: naviMumbaiImg,
-    objectPosition: "center center",
+    objectPosition: "center 38%",
   },
 ] as const;
 
@@ -77,7 +77,7 @@ const DesktopLocationCard = ({ location, index }: DesktopCardProps) => {
         <motion.img
           src={location.image}
           alt={`Rowdy Cafe ${location.name}`}
-          className="absolute inset-x-0 top-[-4%] h-[108%] w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
           style={{ y: imageY, objectPosition: location.objectPosition }}
         />
 
@@ -116,32 +116,31 @@ const MobileDeckCard = ({ location, index, progress, totalCards }: MobileDeckCar
   const reduceMotion = useReducedMotion();
   const segment = 1 / totalCards;
   const start = index * segment;
-  const entryStart = index === 0 ? 0 : Math.max(0, start - segment * 0.22);
-  const settle = Math.min(1, start + segment * 0.38);
+  const reveal = Math.min(1, start + segment * 0.34);
   const end = Math.min(1, start + segment);
 
   const cardY = useTransform(
     progress,
-    index === 0 ? [0, settle, end] : [entryStart, start, settle, end],
-    index === 0 ? ["0%", "0%", "-2%"] : ["112%", "0%", "0%", "-2%"],
+    index === 0 ? [0, 1] : [start, reveal],
+    index === 0 ? ["0%", "0%"] : ["110%", "0%"],
   );
 
   const imageY = useTransform(
     progress,
     [start, end],
-    reduceMotion ? ["0%", "0%"] : ["-12%", "12%"],
+    reduceMotion ? ["0%", "0%"] : ["-8%", "10%"],
   );
 
   const contentY = useTransform(
     progress,
     [start, end],
-    reduceMotion ? [0, 0] : [18, -12],
+    reduceMotion ? [0, 0] : [12, -10],
   );
 
   const scale = useTransform(
     progress,
-    [start, settle, end],
-    reduceMotion ? [1, 1, 1] : [0.97, 1, 0.985],
+    index === 0 ? [0, 1] : [start, reveal],
+    reduceMotion || index === 0 ? [1, 1] : [0.985, 1],
   );
 
   return (
@@ -151,13 +150,21 @@ const MobileDeckCard = ({ location, index, progress, totalCards }: MobileDeckCar
     >
       <motion.img
         src={location.image}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-xl"
+        style={{ objectPosition: location.objectPosition }}
+      />
+
+      <motion.img
+        src={location.image}
         alt={`Rowdy Cafe ${location.name}`}
-        className="absolute inset-x-0 top-[-4%] h-[108%] w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain px-2 pt-2 pb-20"
         style={{ y: imageY, objectPosition: location.objectPosition }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/5" />
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/85 to-transparent" />
 
       <div className="absolute right-5 top-5 z-20 text-6xl font-headline font-extrabold leading-none text-primary/20">
         0{index + 1}
@@ -185,9 +192,13 @@ const MobileLocationsDeck = () => {
   });
 
   return (
-    <div ref={deckRef} className="relative mx-auto max-w-[340px]" style={{ height: `${locations.length * 82}svh` }}>
-      <div className="sticky top-24 flex h-[74svh] items-center justify-center overflow-hidden">
-        <div className="relative aspect-[4/5] w-full">
+    <div
+      ref={deckRef}
+      className="relative mx-auto max-w-[340px]"
+      style={{ height: `${locations.length * 88}svh` }}
+    >
+      <div className="sticky top-20 h-[76svh] min-h-[520px] overflow-hidden">
+        <div className="relative h-full w-full">
           {locations.map((location, index) => (
             <MobileDeckCard
               key={location.name}
@@ -207,7 +218,7 @@ const LocationsSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="section-padding relative overflow-hidden section-dark-b noise-bg">
+    <section className="section-padding relative overflow-visible section-dark-b noise-bg">
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
           <div className="mb-10 text-center md:mb-14">
