@@ -25,7 +25,7 @@ const InvestmentSection = () => (
         <div className="text-center mb-6">
           <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">💎 Investment</span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-3">
-            Complete <span className="text-gradient-fire">Investment</span> Transparency
+            Complete <span className="brush-heading">Investment</span> Transparency
           </h2>
           <p className="text-muted-foreground font-body text-base md:text-lg mb-2">
             Total Investment

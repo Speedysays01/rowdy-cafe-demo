@@ -10,7 +10,7 @@ const InteriorSection = () => (
             🏠 Step Inside
           </span>
           <h2 className="text-3xl md:text-5xl font-headline font-bold mb-2">
-            Take a Look at Our <span className="text-gradient-fire">Cafe Interior</span>
+            Take a Look at Our <span className="brush-heading">Cafe Interior</span>
           </h2>
           <p className="text-muted-foreground font-body text-sm md:text-base max-w-md mx-auto">
             A 3D walkthrough of the Rowdy Cafe experience.

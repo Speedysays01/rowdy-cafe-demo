@@ -67,7 +67,7 @@ const ROISection = () => {
             </span>
             <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-3">
               Projected Cafe{" "}
-              <span className="text-gradient-fire">Profit Potential</span>
+              <span className="brush-heading">Profit Potential</span>
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg">
               Realistic projections based on existing outlet performance.

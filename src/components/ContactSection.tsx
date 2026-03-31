@@ -12,7 +12,7 @@ const ContactSection = () => (
             📍 Reach Out
           </span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-2">
-            Get in <span className="text-gradient-fire">Touch</span>
+            Get in <span className="brush-heading">Touch</span>
           </h2>
         </div>
       </AnimatedSection>
