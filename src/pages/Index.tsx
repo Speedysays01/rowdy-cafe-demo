@@ -26,7 +26,6 @@ const Index = () => {
       <div className="min-h-screen bg-background overflow-x-hidden">
         <Navbar />
         <HeroSection />
-        <BrushDivider variant="flame" />
         <FounderSection />
         <BrushDivider variant="flame" />
         <PresenceSection />
