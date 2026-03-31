@@ -105,7 +105,7 @@
   .section-yellow .rowdy-card {
     background-color: hsl(48 96% 48%);
     border-color: hsl(0 0% 15% / 0.25);
-    box-shadow: 4px 4px 0px hsl(0 0% 0% / 0.15);
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.1);
   }
 
   .section-yellow .rowdy-card::before {
