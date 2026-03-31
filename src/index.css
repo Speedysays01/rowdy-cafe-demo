@@ -306,9 +306,20 @@
       radial-gradient(ellipse 28px 28px at 168px 420px, hsl(5 85% 45% / 0.06) 0%, transparent 70%),
       radial-gradient(ellipse 28px 28px at 280px 392px, hsl(20 90% 50% / 0.07) 0%, transparent 70%),
       radial-gradient(ellipse 28px 28px at 420px 336px, hsl(48 96% 53% / 0.05) 0%, transparent 70%);
-    background-size: 28px 28px, 28px 28px, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
+    background-size: 28px 28px, 28px 28px;
     pointer-events: none;
     z-index: 0;
+  }
+
+  @keyframes grid-cell-glow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  .grid-glow-cell {
+    animation: grid-cell-glow ease-in-out infinite;
+    border-radius: 1px;
+  }
   }
 
   .diagonal-stripe {
