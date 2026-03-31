@@ -51,7 +51,7 @@ const HeroContent = () => {
       </video>
 
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-background/75" />
+      <div className="absolute inset-0 bg-background/50" />
 
       {/* Main content */}
       <div className="flex-1 flex items-center justify-center relative z-20 px-4 pt-16">
