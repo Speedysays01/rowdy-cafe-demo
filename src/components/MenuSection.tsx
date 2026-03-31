@@ -184,19 +184,18 @@ const MenuSection = () => {
         {/* --- Header --- */}
         <AnimatedSection>
           <div className="text-center mb-4">
-            <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+            <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
               🔥 What We Serve
             </span>
-            <h2 className="text-4xl md:text-7xl font-headline text-center mb-3">
-              <span className="text-gradient-fire brush-heading">100+</span> Trendy Menu Items
+            <h2 className="text-4xl md:text-7xl font-headline font-bold text-center mb-3">
+              <span className="text-gradient-fire">100+</span> Trendy Menu Items
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg max-w-xl mx-auto mb-2">
               Factory-to-store menu designed for speed, consistency and high margins.
             </p>
-            <p className="text-primary font-display text-xs md:text-sm uppercase tracking-widest">
+            <p className="text-primary font-display text-xs md:text-sm tracking-widest font-medium">
               Street food energy. Factory-level consistency.
             </p>
-            {/* Animated underline */}
             <motion.div
               className="mx-auto mt-4 h-[2px] w-40 rounded-full"
               style={{ background: "linear-gradient(90deg, transparent, hsl(var(--flame-orange)), hsl(var(--primary)), hsl(var(--flame-orange)), transparent)" }}
@@ -224,7 +223,7 @@ const MenuSection = () => {
               {[...featured, ...featured].map((item, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-[240px] md:w-[300px] relative group cursor-pointer overflow-hidden rounded-sm border-2 border-border hover:border-primary/50 transition-colors"
+                  className="flex-shrink-0 w-[240px] md:w-[300px] relative group cursor-pointer overflow-hidden rounded-2xl border border-border hover:border-primary/50 transition-colors"
                 >
                   <div className="relative overflow-hidden aspect-[4/3]">
                     <img
@@ -236,10 +235,10 @@ const MenuSection = () => {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-primary/10 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="text-[10px] font-display uppercase tracking-widest text-primary mb-1 block">
+                    <span className="text-[10px] font-display tracking-widest text-primary mb-1 block font-medium">
                       {item.tag}
                     </span>
-                    <p className="text-sm md:text-base font-headline">{item.name}</p>
+                    <p className="text-sm md:text-base font-headline font-semibold">{item.name}</p>
                   </div>
                 </div>
               ))}
@@ -277,9 +276,9 @@ const MenuSection = () => {
                   <motion.button
                     key={`${c.id}-${i}`}
                     onClick={() => setActive(realIndex)}
-                    className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display uppercase tracking-wide transition-all border-2 whitespace-nowrap ${
+                    className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display font-medium tracking-wide transition-all border whitespace-nowrap ${
                       active === realIndex
-                        ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(48_96%_53%/0.35)]"
+                        ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.2)]"
                         : "bg-transparent text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
                     }`}
                     whileHover={{ scale: 1.05 }}
@@ -293,7 +292,7 @@ const MenuSection = () => {
             {/* Swipe indicator - mobile only */}
             <div className="flex items-center justify-center gap-1.5 mb-8">
               <motion.div
-                className="text-[10px] font-display uppercase tracking-widest text-muted-foreground/50"
+                className="text-[10px] font-display tracking-widest text-muted-foreground/50"
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -316,7 +315,7 @@ const MenuSection = () => {
             {/* Hero image + info row */}
             <div className="grid md:grid-cols-5 gap-6 md:gap-8 mb-8">
               <div className="md:col-span-2">
-                <TiltCard className="overflow-hidden border-2 border-border hover:border-primary/40 rounded-sm h-full">
+                <TiltCard className="overflow-hidden border border-border hover:border-primary/40 rounded-2xl h-full">
                   <div className="relative overflow-hidden aspect-square md:aspect-auto md:h-full group">
                     <img
                       src={cat.heroImage}
@@ -329,8 +328,8 @@ const MenuSection = () => {
               </div>
 
               <div className="md:col-span-3 flex flex-col justify-center">
-                <h3 className="text-3xl md:text-4xl font-headline mb-2">{cat.label}</h3>
-                <p className="text-primary font-display text-sm uppercase tracking-wide mb-5">
+                <h3 className="text-3xl md:text-4xl font-headline font-bold mb-2">{cat.label}</h3>
+                <p className="text-primary font-display text-sm tracking-wide mb-5 font-medium">
                   {cat.tagline}
                 </p>
 
@@ -344,7 +343,7 @@ const MenuSection = () => {
                       transition={{ delay: i * 0.06 }}
                     >
                       <TiltCard className="rowdy-card p-4 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30">
-                        <p className="text-sm font-display font-bold uppercase mb-1 group-hover:text-primary transition-colors">
+                        <p className="text-sm font-display font-bold mb-1 group-hover:text-primary transition-colors">
                           {item.name}
                         </p>
                         <p className="text-[11px] text-muted-foreground font-body">{item.desc}</p>
@@ -356,14 +355,14 @@ const MenuSection = () => {
                 {/* Extras (gravies for momos) */}
                 {cat.extras && (
                   <div className="mt-5">
-                    <p className="text-[10px] font-display uppercase tracking-widest text-muted-foreground mb-2">
+                    <p className="text-[10px] font-display tracking-widest text-muted-foreground mb-2">
                       Gravies Supplied
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {cat.extras.map((e) => (
                         <span
                           key={e}
-                          className="px-3 py-1 text-[10px] font-display uppercase tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full"
+                          className="px-3 py-1 text-[10px] font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
                         >
                           {e}
                         </span>
@@ -386,7 +385,7 @@ const MenuSection = () => {
             <div className="grid md:grid-cols-2 gap-6 items-center">
               <div>
                 <Sparkles className="w-6 h-6 text-accent mb-3" />
-                <h3 className="text-2xl md:text-3xl font-headline mb-2">
+                <h3 className="text-2xl md:text-3xl font-headline font-bold mb-2">
                   New Innovations Every{" "}
                   <span className="text-gradient-fire">4–6 Months</span>
                 </h3>
@@ -397,14 +396,14 @@ const MenuSection = () => {
                   {["Matcha Latte", "Dan Dan Noodles", "Korean Pizza", "& More"].map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1.5 text-xs font-display uppercase tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full"
+                      className="px-3 py-1.5 text-xs font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="overflow-hidden border-2 border-border rounded-sm">
+              <div className="overflow-hidden border border-border rounded-2xl">
                 <img
                   src={imgInnovations}
                   alt="New menu innovations"

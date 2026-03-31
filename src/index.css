@@ -2,27 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 48 100% 96%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 48 100% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 48 100% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 96%;
 
     --primary: 48 96% 53%;
     --primary-foreground: 0 0% 2%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 48 100% 96%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
 
     --accent: 20 90% 50%;
     --accent-foreground: 0 0% 100%;
@@ -30,22 +30,22 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
     --ring: 48 96% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --flame-orange: 20 90% 50%;
     --flame-red: 5 85% 45%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 48 100% 96%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 96%;
     --sidebar-primary: 48 96% 53%;
     --sidebar-primary-foreground: 0 0% 2%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 48 100% 96%;
-    --sidebar-border: 0 0% 14%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
     --sidebar-ring: 48 96% 53%;
 
     font-family: 'Inter', sans-serif;
@@ -62,9 +62,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -88,15 +87,13 @@
   }
 
   .glass-card {
-    @apply bg-card/90 backdrop-blur-sm border border-border;
-    border-radius: 4px;
-    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.5);
+    @apply bg-card/90 backdrop-blur-sm border border-border rounded-2xl;
+    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.3);
   }
 
   .rowdy-card {
-    @apply bg-card border-2 border-border relative overflow-hidden;
-    border-radius: 2px;
-    box-shadow: 4px 4px 0px hsl(48 96% 53% / 0.15);
+    @apply bg-card border border-border relative overflow-hidden rounded-2xl;
+    box-shadow: 0 2px 20px hsl(0 0% 0% / 0.2);
   }
 
   /* Section theme variants */
@@ -108,7 +105,7 @@
   .section-yellow .rowdy-card {
     background-color: hsl(48 96% 48%);
     border-color: hsl(0 0% 15% / 0.25);
-    box-shadow: 4px 4px 0px hsl(0 0% 0% / 0.15);
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.1);
   }
 
   .section-yellow .rowdy-card::before {
@@ -138,8 +135,8 @@
 
   .section-white .rowdy-card {
     background-color: hsl(0 0% 100%);
-    border-color: hsl(0 0% 85%);
-    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.06), 4px 4px 0px hsl(48 96% 53% / 0.1);
+    border-color: hsl(0 0% 90%);
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.04);
   }
 
   .section-white .rowdy-card::before {

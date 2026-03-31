@@ -22,12 +22,12 @@ const BookingSection = () => {
       <div className="container mx-auto max-w-4xl relative z-10">
         <AnimatedSection>
           <div className="text-center mb-12">
-            <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+            <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
               🚀 Get Started
             </span>
-            <h2 className="text-4xl md:text-6xl font-headline text-center mb-3">
+            <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-3">
               Start Your{" "}
-              <span className="text-gradient-fire brush-heading">Rowdy Cafe</span> Journey
+              <span className="text-gradient-fire">Rowdy Cafe</span> Journey
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg">
               Fill the form and our franchise team will reach out.{" "}
@@ -56,7 +56,7 @@ const BookingSection = () => {
                     maxLength={field.maxLength}
                     value={form[field.name as keyof typeof form]}
                     onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
-                    className="w-full bg-secondary border-2 border-border py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-all"
+                    className="w-full bg-secondary border border-border rounded-xl py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-all"
                   />
                 </div>
               ))}
@@ -67,7 +67,7 @@ const BookingSection = () => {
                   required
                   value={form.investment}
                   onChange={(e) => setForm({ ...form, investment: e.target.value })}
-                  className="w-full bg-secondary border-2 border-border py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground focus:outline-none focus:border-primary transition-all appearance-none"
+                  className="w-full bg-secondary border border-border rounded-xl py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground focus:outline-none focus:border-primary transition-all appearance-none"
                 >
                   <option value="" disabled>Investment Budget</option>
                   <option value="8L">₹7–8 Lakh</option>
@@ -84,7 +84,7 @@ const BookingSection = () => {
                 maxLength={500}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-secondary border-2 border-border py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-all resize-none h-20 sm:h-24"
+                className="w-full bg-secondary border border-border rounded-xl py-3 sm:py-3.5 pl-11 pr-4 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-all resize-none h-20 sm:h-24"
               />
             </div>
 
@@ -92,7 +92,7 @@ const BookingSection = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Button variant="hero" size="chunky" className="w-full text-xs sm:text-sm" type="submit">
+              <Button variant="hero" size="chunky" className="w-full" type="submit">
                 🔥 Book a Franchise Meeting
               </Button>
             </motion.div>

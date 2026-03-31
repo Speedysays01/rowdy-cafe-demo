@@ -34,11 +34,11 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
     <div ref={ref} className="flex flex-col items-center">
       <div className="relative w-24 h-24 md:w-28 md:h-28 mb-3">
         <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
+          <circle cx="60" cy="60" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="5" />
           <circle
             cx="60" cy="60" r={radius} fill="none"
             stroke="hsl(var(--primary))"
-            strokeWidth="6"
+            strokeWidth="5"
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
@@ -47,11 +47,11 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-lg">{emoji}</span>
-          <span className="text-xl md:text-2xl font-headline text-gradient-fire">{progress}%</span>
+          <span className="text-xl md:text-2xl font-headline font-bold text-gradient-fire">{progress}%</span>
         </div>
       </div>
-      <p className="text-sm md:text-base font-headline text-center mb-0.5">{range}</p>
-      <p className="text-[10px] md:text-xs font-display uppercase tracking-wide text-muted-foreground text-center">{label}</p>
+      <p className="text-sm md:text-base font-headline font-semibold text-center mb-0.5">{range}</p>
+      <p className="text-[10px] md:text-xs font-display tracking-wide text-muted-foreground text-center">{label}</p>
     </div>
   );
 };
@@ -61,9 +61,9 @@ const ProfitSection = () => (
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
         <div className="text-center mb-14 heading-glow">
-          <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">💰 The Numbers</span>
-          <h2 className="text-4xl md:text-6xl font-headline text-center mb-4">
-            High <span className="text-gradient-fire brush-heading">Profit Margin</span> Cafe Model
+          <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">💰 The Numbers</span>
+          <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-4">
+            High <span className="text-gradient-fire">Profit Margin</span> Cafe Model
           </h2>
         </div>
       </AnimatedSection>
