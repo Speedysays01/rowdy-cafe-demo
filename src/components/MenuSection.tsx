@@ -292,7 +292,7 @@ const MenuSection = () => {
             {/* Swipe indicator - mobile only */}
             <div className="flex items-center justify-center gap-1.5 mb-8">
               <motion.div
-                className="text-[10px] font-display uppercase tracking-widest text-muted-foreground/50"
+                className="text-[10px] font-display tracking-widest text-muted-foreground/50"
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
