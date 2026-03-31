@@ -12,7 +12,7 @@ const PresenceSection = () => (
             🇮🇳 Pan India Expansion
           </span>
           <h2 className="text-4xl md:text-7xl font-headline text-center mb-3">
-            <span className="text-gradient-fire brush-heading">100+ Outlets</span> Across 10 States
+            <span className="brush-heading">100+ Outlets</span> Across 10 States
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto font-body text-base md:text-lg">
             India's First Factory-to-Store Cafe Model

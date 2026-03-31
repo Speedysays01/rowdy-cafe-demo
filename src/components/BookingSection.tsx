@@ -27,7 +27,7 @@ const BookingSection = () => {
             </span>
             <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-3">
               Start Your{" "}
-              <span className="text-gradient-fire">Rowdy Cafe</span> Journey
+              <span className="brush-heading">Rowdy Cafe</span> Journey
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg">
               Fill the form and our franchise team will reach out.{" "}

@@ -18,7 +18,7 @@ const FounderSection = () => (
             🏆 Leadership
           </span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-2">
-            <span className="text-gradient-fire">10+ Years</span> of Food Industry Experience
+            <span className="brush-heading">10+ Years</span> of Food Industry Experience
           </h2>
         </div>
       </AnimatedSection>

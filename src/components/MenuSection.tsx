@@ -329,7 +329,7 @@ const MenuSection = () => {
               🔥 What We Serve
             </span>
             <h2 className="text-4xl md:text-7xl font-headline font-bold text-center mb-3">
-              <span className="text-gradient-fire">100+</span> Trendy Menu Items
+              <span className="brush-heading">100+</span> Trendy Menu Items
             </h2>
             <p className="text-muted-foreground font-body text-base md:text-lg max-w-xl mx-auto mb-2">
               Factory-to-store menu designed for speed, consistency and high margins.

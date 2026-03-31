@@ -63,7 +63,7 @@ const ProfitSection = () => (
         <div className="text-center mb-14 heading-glow">
           <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">💰 The Numbers</span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-4">
-            High <span className="text-gradient-fire">Profit Margin</span> Cafe Model
+            High <span className="brush-heading">Profit Margin</span> Cafe Model
           </h2>
         </div>
       </AnimatedSection>

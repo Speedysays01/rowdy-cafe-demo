@@ -40,7 +40,7 @@ const WhyRowdySection = () => (
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-7xl font-headline text-center mb-4">
             Why{" "}
-            <span className="text-gradient-fire brush-heading">Rowdy Cafe?</span>
+            <span className="brush-heading">Rowdy Cafe?</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto font-body text-base md:text-lg">
             A revolutionary factory-to-store model that removes all operational complexity.
