@@ -1,7 +1,13 @@
-import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import {
+  motion,
+  type PanInfo,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
-import { useIsMobile } from "@/hooks/use-mobile";
 import vileParleImg from "@/assets/vile_parle.jpg";
 import thaneImg from "@/assets/thane.jpg";
 import viharImg from "@/assets/vihar.webp";
@@ -40,15 +46,43 @@ const locations = [
 
 type Location = (typeof locations)[number];
 
-/* ─── Desktop card with subtle image parallax ─── */
+const wrapIndex = (value: number) => (value + locations.length) % locations.length;
 
-const DesktopLocationCard = ({ location, index }: { location: Location; index: number }) => {
+const LocationCardDetails = ({
+  location,
+  index,
+  compact = false,
+}: {
+  compact?: boolean;
+  index: number;
+  location: Location;
+}) => (
+  <>
+    <div className="absolute right-5 top-4 z-20 text-6xl font-headline font-extrabold leading-none text-primary/15 md:text-8xl">
+      0{index + 1}
+    </div>
+
+    <div className={`absolute inset-x-0 bottom-0 z-20 ${compact ? "p-5" : "p-6 md:p-8"}`}>
+      <span className="mb-1.5 block text-xs font-display uppercase tracking-[0.3em] text-accent">
+        Mumbai
+      </span>
+      <h3 className={`mb-1 font-headline font-bold text-foreground ${compact ? "text-2xl" : "text-3xl md:text-4xl"}`}>
+        {location.name}
+      </h3>
+      <p className="mb-0.5 text-sm italic text-foreground/75 md:text-base">{location.tagline}</p>
+      <p className="text-xs text-muted-foreground md:text-sm">📍 {location.address}</p>
+    </div>
+  </>
+);
+
+const DesktopLocationCard = ({ location, index }: { index: number; location: Location }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start 90%", "end start"],
   });
+
   const imageY = useTransform(scrollYProgress, [0, 1], reduceMotion ? ["0%", "0%"] : ["-8%", "8%"]);
 
   return (
@@ -67,79 +101,167 @@ const DesktopLocationCard = ({ location, index }: { location: Location; index: n
           style={{ y: imageY, objectPosition: location.objectPosition }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
-        <CardContent location={location} index={index} />
+        <LocationCardDetails index={index} location={location} />
       </motion.article>
     </div>
   );
 };
 
-/* ─── Mobile sticky card (pure CSS sticky — no JS scroll tracking) ─── */
+const MobileLocationsShowcase = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
 
-const MobileStickyCard = ({ location, index }: { location: Location; index: number }) => {
+  const changeCard = (direction: number) => {
+    setActiveIndex((current) => wrapIndex(current + direction));
+  };
+
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const swipeForce = info.offset.x + info.velocity.x * 0.16;
+
+    if (swipeForce < -90) {
+      changeCard(1);
+    } else if (swipeForce > 90) {
+      changeCard(-1);
+    }
+  };
+
   return (
-    /* Each card lives in a tall scroll-track div. As the user scrolls past
-       this track, the sticky card stays pinned; the next track's card
-       slides up on top of it naturally via higher z-index. */
-    <div
-      className="relative"
-      style={{
-        height: "100vh",
-        zIndex: index + 1,
-      }}
-    >
-      <article
-        className="sticky overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_-8px_30px_rgba(0,0,0,0.45)]"
-        style={{
-          top: "5rem",          /* 80px from top */
-          height: "70vh",
-          minHeight: "420px",
-        }}
-      >
-        {/* Background image — object-contain so nothing important is cropped */}
-        <img
-          src={location.image}
-          alt={`Rowdy Cafe ${location.name}`}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: location.objectPosition }}
+    <div className="md:hidden">
+      <div className="relative mx-auto max-w-[344px]">
+        <motion.div
+          key={activeIndex}
+          initial={{ opacity: 0.35, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-x-6 top-10 h-[24rem] rounded-full bg-primary/15 blur-3xl"
         />
 
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background via-background/90 to-transparent" />
+        <div className="relative mb-5 h-[34rem]">
+          {locations.map((location, index) => {
+            const stackIndex = wrapIndex(index - activeIndex);
+            const isActive = stackIndex === 0;
+            const isVisible = stackIndex < 3;
 
-        <CardContent location={location} index={index} />
-      </article>
+            return (
+              <motion.article
+                key={location.name}
+                drag={isActive && !reduceMotion ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.14}
+                onDragEnd={isActive ? handleDragEnd : undefined}
+                initial={false}
+                animate={{
+                  opacity: isVisible ? 1 - stackIndex * 0.22 : 0,
+                  rotate: stackIndex === 1 ? -4 : stackIndex === 2 ? 4 : 0,
+                  scale: 1 - stackIndex * 0.05,
+                  x: 0,
+                  y: stackIndex * 18,
+                }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                style={{ zIndex: locations.length - stackIndex }}
+                className={`absolute inset-0 overflow-hidden rounded-[1.85rem] border border-border bg-card shadow-2xl ${
+                  isActive ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
+                }`}
+              >
+                <img
+                  src={location.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover opacity-30 blur-xl"
+                  style={{ objectPosition: location.objectPosition }}
+                />
+
+                <motion.img
+                  src={location.image}
+                  alt={`Rowdy Cafe ${location.name}`}
+                  className="absolute inset-x-3 top-3 h-[58%] w-[calc(100%-1.5rem)] object-contain"
+                  style={{ objectPosition: location.objectPosition }}
+                  animate={isActive && !reduceMotion ? { y: [0, -8, 0] } : { y: 0 }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/95 to-transparent" />
+
+                <div className="absolute left-5 top-5 z-20 rounded-full border border-border bg-card/80 px-3 py-1 text-[10px] font-display uppercase tracking-[0.28em] text-accent backdrop-blur-sm">
+                  Swipe the card
+                </div>
+
+                <LocationCardDetails compact index={index} location={location} />
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <button
+            type="button"
+            onClick={() => changeCard(-1)}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary"
+            aria-label="Previous location"
+          >
+            <ArrowLeft className="h-4 w-4" />
+          </button>
+
+          <div className="flex flex-1 items-center justify-center gap-2">
+            {locations.map((location, index) => {
+              const isActive = index === activeIndex;
+
+              return (
+                <button
+                  key={location.name}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    isActive ? "w-10 bg-primary" : "w-2 bg-muted"
+                  }`}
+                  aria-label={`Show ${location.name}`}
+                />
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => changeCard(1)}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-foreground transition-colors hover:bg-secondary"
+            aria-label="Next location"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {locations.map((location, index) => {
+            const isActive = index === activeIndex;
+
+            return (
+              <button
+                key={location.name}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`rounded-2xl border px-3 py-3 text-left transition-all duration-300 ${
+                  isActive
+                    ? "border-primary bg-primary/10 text-foreground"
+                    : "border-border bg-card/70 text-muted-foreground"
+                }`}
+              >
+                <span className="block text-[10px] font-display uppercase tracking-[0.28em] text-accent">
+                  0{index + 1}
+                </span>
+                <span className="mt-1 block text-sm font-semibold">{location.name}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
 
-/* ─── Shared card content overlay ─── */
-
-const CardContent = ({ location, index }: { location: Location; index: number }) => (
-  <>
-    <div className="absolute right-5 top-4 z-20 text-6xl font-headline font-extrabold leading-none text-primary/15 md:text-8xl">
-      0{index + 1}
-    </div>
-    <div className="absolute inset-x-0 bottom-0 z-20 p-5 md:p-8">
-      <span className="mb-1.5 block text-xs font-display uppercase tracking-[0.3em] text-accent">
-        Mumbai
-      </span>
-      <h3 className="mb-1 text-2xl font-headline font-bold text-foreground md:text-4xl">
-        {location.name}
-      </h3>
-      <p className="mb-0.5 text-sm italic text-foreground/75">{location.tagline}</p>
-      <p className="text-xs text-muted-foreground">📍 {location.address}</p>
-    </div>
-  </>
-);
-
-/* ─── Section ─── */
-
 const LocationsSection = () => {
-  const isMobile = useIsMobile();
-
   return (
-    <section className="relative section-dark-b noise-bg py-14 md:py-32 px-4 md:px-8">
+    <section className="relative section-dark-b noise-bg px-4 py-14 md:px-8 md:py-32">
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
           <div className="mb-10 text-center md:mb-14">
@@ -155,19 +277,13 @@ const LocationsSection = () => {
           </div>
         </AnimatedSection>
 
-        {isMobile ? (
-          <div className="mx-auto max-w-[340px]">
-            {locations.map((location, index) => (
-              <MobileStickyCard key={location.name} location={location} index={index} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 gap-6">
-            {locations.map((location, index) => (
-              <DesktopLocationCard key={location.name} index={index} location={location} />
-            ))}
-          </div>
-        )}
+        <MobileLocationsShowcase />
+
+        <div className="hidden grid-cols-2 gap-6 md:grid">
+          {locations.map((location, index) => (
+            <DesktopLocationCard key={location.name} index={index} location={location} />
+          ))}
+        </div>
       </div>
     </section>
   );
