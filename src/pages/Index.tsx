@@ -11,7 +11,7 @@ import ROISection from "@/components/ROISection";
 import BookingSection from "@/components/BookingSection";
 import ContactSection from "@/components/ContactSection";
 import SplashScreen from "@/components/SplashScreen";
-import BrushDivider from "@/components/BrushDivider";
+
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
