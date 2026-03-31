@@ -332,7 +332,6 @@ const MenuSection = () => {
                 <p className="text-primary font-display text-sm tracking-wide mb-5 font-medium">
                   {cat.tagline}
                 </p>
-                </p>
 
                 {/* Item cards grid with 3D tilt */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
