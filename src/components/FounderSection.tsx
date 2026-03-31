@@ -48,33 +48,29 @@ const FounderSection = () => (
               <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
               <span>Factory located at <span className="text-foreground font-semibold">Kopar Khairane, Navi Mumbai</span></span>
             </div>
-            <div className="border-t border-border/40 pt-5">
-              <p className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-3">Trusted supply partner to</p>
-              <div className="flex flex-nowrap gap-3">
-                {["Social", "Radisson", "Taj"].map((brand) => (
-                  <span key={brand} className="rowdy-card px-4 py-2 text-sm font-display uppercase tracking-wide text-primary">{brand}</span>
-                ))}
-              </div>
-            </div>
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
-            >
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2">
               {badges.map((b, i) => (
                 <motion.div
                   key={i}
-                  className="rowdy-card p-3 flex items-center gap-3 group"
-                  variants={{ hidden: { opacity: 0, scale: 0.8, y: 10 }, visible: { opacity: 1, scale: 1, y: 0 } }}
-                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-2 group"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, duration: 0.4 }}
                 >
-                  <b.icon className="w-5 h-5 text-primary flex-shrink-0 group-hover:text-accent transition-colors" />
-                  <span className="text-xs font-display uppercase tracking-wide">{b.label}</span>
+                  <b.icon className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span className="text-xs font-display uppercase tracking-wide text-foreground/70">{b.label}</span>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
+            <div className="border-t border-border/40 pt-5 mt-2">
+              <p className="text-xs font-display uppercase tracking-widest text-muted-foreground mb-3">Trusted supply partner to</p>
+              <div className="flex items-center gap-4">
+                {["Social", "Radisson", "Taj"].map((brand) => (
+                  <span key={brand} className="text-lg font-headline text-primary/80 tracking-wider">{brand}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </div>
