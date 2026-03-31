@@ -32,9 +32,9 @@ const Index = () => {
         <BrushDivider variant="glow-line" />
         <MenuSection />
         <BrushDivider variant="brush" />
-        <ProfitSection />
-        <BrushDivider variant="ember" />
         <InvestmentSection />
+        <BrushDivider variant="ember" />
+        <ProfitSection />
         <BrushDivider variant="flame" />
         <ROISection />
         <BrushDivider variant="glow-line" />
