@@ -34,7 +34,7 @@ const LocationCard = ({ location, index, isMobile, totalCards }: LocationCardPro
   const imageY = useTransform(
     scrollYProgress,
     [0, 1],
-    reduceMotion ? ["0%", "0%"] : isMobile ? ["-18%", "18%"] : ["-10%", "10%"],
+    reduceMotion ? ["0%", "0%"] : isMobile ? ["-25%", "25%"] : ["-10%", "10%"],
   );
 
   const contentY = useTransform(
