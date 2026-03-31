@@ -376,50 +376,7 @@ const MenuSection = () => {
         </AnimatePresence>
 
 
-        {/* --- Innovations --- */}
-        <AnimatedSection delay={0.3}>
-          <motion.div
-            className="rowdy-card p-6 md:p-10 relative overflow-hidden"
-            whileHover={{ boxShadow: "0 0 30px hsl(48 96% 53% / 0.1)" }}
-          >
-            <div className="grid md:grid-cols-2 gap-6 items-center">
-              <div>
-                <Sparkles className="w-6 h-6 text-accent mb-3" />
-                <h3 className="text-2xl md:text-3xl font-headline font-bold mb-2">
-                  New Innovations Every{" "}
-                  <span className="text-gradient-fire">4–6 Months</span>
-                </h3>
-                <p className="text-sm text-muted-foreground font-body mb-4">
-                  We keep the menu fresh so your customers keep coming back.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Matcha Latte", "Dan Dan Noodles", "Korean Pizza", "& More"].map((item) => (
-                    <span
-                      key={item}
-                      className="px-3 py-1.5 text-xs font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="overflow-hidden border border-border rounded-2xl">
-                <img
-                  src={imgInnovations}
-                  alt="New menu innovations"
-                  className="w-full aspect-video object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            </div>
-            {/* Animated underline */}
-            <motion.div
-              className="absolute bottom-0 left-0 right-0 h-[2px]"
-              style={{ background: "linear-gradient(90deg, transparent, hsl(var(--flame-orange)), hsl(var(--primary)), hsl(var(--flame-orange)), transparent)" }}
-              animate={{ opacity: [0.3, 0.8, 0.3] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
-          </motion.div>
-        </AnimatedSection>
+
       </div>
     </section>
   );
