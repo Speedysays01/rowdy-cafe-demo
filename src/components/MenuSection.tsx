@@ -235,10 +235,10 @@ const MenuSection = () => {
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-primary/10 to-transparent" />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <span className="text-[10px] font-display uppercase tracking-widest text-primary mb-1 block">
+                    <span className="text-[10px] font-display tracking-widest text-primary mb-1 block font-medium">
                       {item.tag}
                     </span>
-                    <p className="text-sm md:text-base font-headline">{item.name}</p>
+                    <p className="text-sm md:text-base font-headline font-semibold">{item.name}</p>
                   </div>
                 </div>
               ))}
