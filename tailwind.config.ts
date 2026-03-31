@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Oswald"', 'sans-serif'],
-        headline: ['"Bebas Neue"', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'sans-serif'],
+        headline: ['"Bricolage Grotesque"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
         body: ['"Inter"', 'sans-serif'],
       },
       colors: {

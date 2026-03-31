@@ -87,15 +87,13 @@
   }
 
   .glass-card {
-    @apply bg-card/90 backdrop-blur-sm border border-border;
-    border-radius: 4px;
-    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.5);
+    @apply bg-card/90 backdrop-blur-sm border border-border rounded-2xl;
+    box-shadow: 0 4px 30px hsl(0 0% 0% / 0.3);
   }
 
   .rowdy-card {
-    @apply bg-card border-2 border-border relative overflow-hidden;
-    border-radius: 2px;
-    box-shadow: 4px 4px 0px hsl(48 96% 53% / 0.15);
+    @apply bg-card border border-border relative overflow-hidden rounded-2xl;
+    box-shadow: 0 2px 20px hsl(0 0% 0% / 0.2);
   }
 
   /* Section theme variants */
