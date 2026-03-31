@@ -397,7 +397,7 @@ const MenuSection = () => {
                   {["Matcha Latte", "Dan Dan Noodles", "Korean Pizza", "& More"].map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1.5 text-xs font-display uppercase tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full"
+                      className="px-3 py-1.5 text-xs font-display tracking-wide bg-primary/10 text-primary border border-primary/20 rounded-full font-medium"
                     >
                       {item}
                     </span>
