@@ -9,7 +9,7 @@ import naviMumbaiImg from "@/assets/navi_mumbai.jpg";
 const locations = [
   { name: "Vile Parle", tagline: "Where it all began", address: "Vile Parle West, Mumbai", image: vileParleImg },
   { name: "Thane", tagline: "The suburban powerhouse", address: "Thane West, Mumbai", image: thaneImg },
-  { name: "Virar", tagline: "Bold & unstoppable", address: "Virar, Mumbai", image: viharImg },
+  { name: "Vidya Vihar", tagline: "Bold & unstoppable", address: "Vidya Vihar, Mumbai", image: viharImg },
   { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra", image: naviMumbaiImg },
 ];
 
