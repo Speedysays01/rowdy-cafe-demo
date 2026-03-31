@@ -328,9 +328,10 @@ const MenuSection = () => {
               </div>
 
               <div className="md:col-span-3 flex flex-col justify-center">
-                <h3 className="text-3xl md:text-4xl font-headline mb-2">{cat.label}</h3>
-                <p className="text-primary font-display text-sm uppercase tracking-wide mb-5">
+                <h3 className="text-3xl md:text-4xl font-headline font-bold mb-2">{cat.label}</h3>
+                <p className="text-primary font-display text-sm tracking-wide mb-5 font-medium">
                   {cat.tagline}
+                </p>
                 </p>
 
                 {/* Item cards grid with 3D tilt */}
