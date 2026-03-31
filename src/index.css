@@ -256,13 +256,27 @@
   .brush-heading {
     color: hsl(0 0% 5%);
     -webkit-text-fill-color: hsl(0 0% 5%);
-    background-color: hsl(48 96% 53%);
-    background-image: none;
-    -webkit-background-clip: unset;
-    padding: 0.05em 0.3em;
-    border-radius: 4px;
+    position: relative;
+    padding: 0.05em 0.35em;
+    background: none;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+    isolation: isolate;
+  }
+
+  .brush-heading::before {
+    content: '';
+    position: absolute;
+    inset: -0.05em -0.1em;
+    z-index: -1;
+    background-color: hsl(48 96% 53%);
+    border-radius: 4px 8px 3px 6px;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C10 2, 30 4, 50 3 C80 1, 110 5, 140 3 C160 1, 185 4, 197 7 C199 12, 198 18, 197 25 C195 30, 188 36, 170 37 C140 39, 100 35, 60 37 C30 39, 10 36, 4 33 C1 28, 2 15, 3 8Z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C10 2, 30 4, 50 3 C80 1, 110 5, 140 3 C160 1, 185 4, 197 7 C199 12, 198 18, 197 25 C195 30, 188 36, 170 37 C140 39, 100 35, 60 37 C30 39, 10 36, 4 33 C1 28, 2 15, 3 8Z' fill='black'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
   }
 
   .noise-bg {
