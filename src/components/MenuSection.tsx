@@ -344,21 +344,20 @@ const MenuSection = () => {
                   {cat.tagline}
                 </p>
 
-                {/* Item cards - zigzag on mobile, grid on desktop */}
-                <div className="flex flex-col gap-3 md:grid md:grid-cols-3">
+                {/* Item cards grid with 3D tilt */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {cat.items.map((item, i) => (
                     <motion.div
                       key={item.name}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.06 }}
-                      className={`w-[80%] md:w-full ${i % 2 === 0 ? 'self-start' : 'self-end'} md:self-auto`}
                     >
                       <TiltCard className="rowdy-card p-4 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30">
                         <p className="text-sm font-display font-bold mb-1 group-hover:text-primary transition-colors">
                           {item.name}
                         </p>
-                        
+                        <p className="text-[11px] text-muted-foreground font-body">{item.desc}</p>
                       </TiltCard>
                     </motion.div>
                   ))}
