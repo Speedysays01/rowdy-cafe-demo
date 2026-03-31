@@ -11,6 +11,7 @@ import InvestmentSection from "@/components/InvestmentSection";
 import ROISection from "@/components/ROISection";
 import BookingSection from "@/components/BookingSection";
 import ContactSection from "@/components/ContactSection";
+import LocationsSection from "@/components/LocationsSection";
 import SplashScreen from "@/components/SplashScreen";
 
 
@@ -30,6 +31,7 @@ const Index = () => {
         <FounderSection />
         <MenuSection />
         <InteriorSection />
+        <LocationsSection />
         <InvestmentSection />
         <ProfitSection />
         <ROISection />
