@@ -404,7 +404,7 @@ const MenuSection = () => {
                   ))}
                 </div>
               </div>
-              <div className="overflow-hidden border-2 border-border rounded-sm">
+              <div className="overflow-hidden border border-border rounded-2xl">
                 <img
                   src={imgInnovations}
                   alt="New menu innovations"
