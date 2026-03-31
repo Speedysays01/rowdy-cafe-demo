@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ChefHat, Factory, UtensilsCrossed, Star, ChevronDown } from "lucide-react";
+import { ChefHat, Factory, UtensilsCrossed, Star, MapPin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import rowdyMan from "@/assets/rowdy-man.png";
 
