@@ -344,7 +344,7 @@ const MenuSection = () => {
                       transition={{ delay: i * 0.06 }}
                     >
                       <TiltCard className="rowdy-card p-4 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30">
-                        <p className="text-sm font-display font-bold uppercase mb-1 group-hover:text-primary transition-colors">
+                        <p className="text-sm font-display font-bold mb-1 group-hover:text-primary transition-colors">
                           {item.name}
                         </p>
                         <p className="text-[11px] text-muted-foreground font-body">{item.desc}</p>
