@@ -1,6 +1,7 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import { useIsMobile } from "@/hooks/use-mobile";
 import vileParleImg from "@/assets/vile_parle.jpg";
 import thaneImg from "@/assets/thane.jpg";
 import viharImg from "@/assets/vihar.webp";
@@ -13,102 +14,114 @@ const locations = [
   { name: "Navi Mumbai", tagline: "The new frontier", address: "Navi Mumbai, Maharashtra", image: naviMumbaiImg },
 ];
 
-const LocationCard = ({
-  location,
-  index,
-}: {
-  location: (typeof locations)[0];
+type Location = (typeof locations)[number];
+
+interface LocationCardProps {
   index: number;
-}) => {
-  const cardRef = useRef<HTMLDivElement>(null);
+  isMobile: boolean;
+  location: Location;
+  totalCards: number;
+}
+
+const LocationCard = ({ location, index, isMobile, totalCards }: LocationCardProps) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
+    target: sectionRef,
+    offset: isMobile ? ["start end", "end start"] : ["start 90%", "end start"],
   });
 
-  // Parallax on the background image only
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  const imageY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? ["0%", "0%"] : isMobile ? ["-18%", "18%"] : ["-10%", "10%"],
+  );
+
+  const contentY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduceMotion ? [0, 0] : isMobile ? [28, -20] : [16, -8],
+  );
+
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    reduceMotion ? [1, 1, 1] : isMobile ? [0.94, 1, 0.98] : [0.98, 1, 1],
+  );
+
+  const mobileTopOffset = `${88 + index * 14}px`;
+  const mobileTrackHeight = index === totalCards - 1 ? "h-[78vh]" : "h-[92vh]";
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <div
-        className="relative rounded-2xl overflow-hidden border border-border group cursor-pointer"
-        style={{ height: "clamp(280px, 50vh, 420px)" }}
+    <div ref={sectionRef} className={isMobile ? `relative ${mobileTrackHeight}` : "relative"}>
+      <motion.article
+        className={`group relative overflow-hidden rounded-[1.75rem] border border-border bg-card ${
+          isMobile ? "sticky h-[68vh] min-h-[460px]" : "h-[420px]"
+        }`}
+        style={isMobile ? { top: mobileTopOffset, scale } : undefined}
       >
-        {/* Parallax image */}
         <motion.img
           src={location.image}
           alt={`Rowdy Cafe ${location.name}`}
-          className="absolute inset-0 w-full h-full object-cover scale-110"
-          style={{ y: imgY }}
+          className="absolute inset-x-0 top-[-12%] h-[124%] w-full object-cover will-change-transform"
+          style={{ y: imageY }}
         />
 
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-background/30" />
 
-        {/* Location number */}
-        <div className="absolute top-4 right-5 z-20">
-          <span
-            className="text-6xl md:text-8xl font-headline font-extrabold leading-none"
-            style={{ color: "hsl(48 96% 53% / 0.15)" }}
-          >
-            0{index + 1}
-          </span>
+        <div className="absolute right-5 top-5 z-20 text-6xl font-headline font-extrabold leading-none text-primary/20 md:text-8xl">
+          0{index + 1}
         </div>
 
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 z-20">
-          <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-1.5 block">
+        <motion.div style={{ y: contentY }} className="absolute inset-x-0 bottom-0 z-20 p-6 md:p-8">
+          <span className="mb-2 block text-xs font-display uppercase tracking-[0.3em] text-accent">
             Mumbai
           </span>
-          <h3 className="text-2xl md:text-4xl font-headline font-bold text-foreground mb-1">
+          <h3 className="mb-1 text-3xl font-headline font-bold text-foreground md:text-4xl">
             {location.name}
           </h3>
-          <p className="text-foreground/70 font-body text-sm mb-0.5 italic">
+          <p className="mb-1 text-sm italic text-foreground/75 md:text-base">
             {location.tagline}
           </p>
-          <p className="text-muted-foreground font-body text-xs">
-            📍 {location.address}
-          </p>
-        </div>
+          <p className="text-xs text-muted-foreground md:text-sm">📍 {location.address}</p>
+        </motion.div>
 
-        {/* Hover glow */}
-        <div
-          className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ boxShadow: "inset 0 0 80px hsl(48 96% 53% / 0.1)" }}
-        />
-      </div>
-    </motion.div>
+        <div className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 shadow-[inset_0_0_80px_hsl(var(--primary)/0.10)]" />
+      </motion.article>
+    </div>
   );
 };
 
 const LocationsSection = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <section className="section-padding relative noise-bg section-dark-b overflow-hidden">
-      <div className="container mx-auto max-w-4xl relative z-10">
+    <section className="section-padding relative overflow-hidden section-dark-b noise-bg">
+      <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
-          <div className="text-center mb-10 md:mb-14">
-            <span className="text-xs font-display uppercase tracking-[0.3em] text-accent mb-4 block">
+          <div className="mb-10 text-center md:mb-14">
+            <span className="mb-4 block text-xs font-display uppercase tracking-[0.3em] text-accent">
               📍 Our Locations
             </span>
-            <h2 className="text-4xl md:text-7xl font-headline text-center mb-3">
+            <h2 className="mb-3 text-center font-headline text-4xl md:text-7xl">
               <span className="brush-heading">4 Outlets</span> in Mumbai
             </h2>
-            <p className="text-muted-foreground text-center max-w-xl mx-auto font-body text-base md:text-lg">
+            <p className="mx-auto max-w-xl text-center font-body text-base text-muted-foreground md:text-lg">
               Find your nearest Rowdy Cafe
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <div className={isMobile ? "mx-auto max-w-sm" : "grid grid-cols-2 gap-6"}>
           {locations.map((location, index) => (
-            <LocationCard key={location.name} location={location} index={index} />
+            <LocationCard
+              key={location.name}
+              index={index}
+              isMobile={isMobile}
+              location={location}
+              totalCards={locations.length}
+            />
           ))}
         </div>
       </div>
