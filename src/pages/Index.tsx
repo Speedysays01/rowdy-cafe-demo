@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 // import WhyRowdySection from "@/components/WhyRowdySection"; // Hidden for now — can restore later
 import FounderSection from "@/components/FounderSection";
-import PresenceSection from "@/components/PresenceSection";
+
 import MenuSection from "@/components/MenuSection";
 import ProfitSection from "@/components/ProfitSection";
 import InvestmentSection from "@/components/InvestmentSection";
