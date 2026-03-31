@@ -31,6 +31,7 @@ const Index = () => {
         <FounderSection />
         <MenuSection />
         <InteriorSection />
+        <LocationsSection />
         <InvestmentSection />
         <ProfitSection />
         <ROISection />
