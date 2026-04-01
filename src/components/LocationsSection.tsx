@@ -250,6 +250,7 @@ const MobileLocationsShowcase = () => {
 const LocationsSection = () => {
   return (
     <section className="relative section-dark-b noise-bg grid-bg px-4 py-10 md:px-8 md:py-20">
+      <GridGlow />
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
           <div className="mb-10 text-center md:mb-14">

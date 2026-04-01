@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import GridGlow from "./GridGlow";
 
 const costs = [
   { item: "Franchise Fees", cost: "₹1,00,000" },

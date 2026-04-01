@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import GridGlow from "./GridGlow";
 import { MapPin, Phone, Mail, Instagram, Youtube, Facebook } from "lucide-react";
 import logo from "@/assets/rowdy-logo.png";
 
