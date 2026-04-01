@@ -6,7 +6,7 @@ import logo from "@/assets/rowdy-logo.png";
 
 const ContactSection = () => (
   <section id="contact" className="section-padding relative noise-bg section-dark-c grid-bg">
-    <GridGlow />
+    
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
         <div className="text-center mb-12">
