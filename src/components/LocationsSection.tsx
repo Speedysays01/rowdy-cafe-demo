@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import GridGlow from "./GridGlow";
 import { AspectRatio } from "./ui/aspect-ratio";
 import vileParleImg from "@/assets/vile_parle.jpg";
 import thaneImg from "@/assets/thane.jpg";
