@@ -299,15 +299,6 @@
     z-index: 0;
   }
 
-  @keyframes grid-cell-glow {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-  }
-
-  .grid-glow-cell {
-    animation: grid-cell-glow ease-in-out infinite;
-    border-radius: 1px;
-  }
 
   .diagonal-stripe {
     background-image: repeating-linear-gradient(
