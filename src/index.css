@@ -308,7 +308,6 @@
     animation: grid-cell-glow ease-in-out infinite;
     border-radius: 1px;
   }
-  }
 
   .diagonal-stripe {
     background-image: repeating-linear-gradient(
