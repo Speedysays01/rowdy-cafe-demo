@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import GridGlow from "./GridGlow";
+
 import { Award, Factory, Star, MapPin } from "lucide-react";
 import ownerImg from "@/assets/owner.png";
 
