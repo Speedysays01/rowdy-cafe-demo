@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import GridGlow from "./GridGlow";
+
 
 const scenarios = [
   {
