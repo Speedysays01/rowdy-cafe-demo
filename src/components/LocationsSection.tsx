@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import GridGlow from "./GridGlow";
 import { AspectRatio } from "./ui/aspect-ratio";
 import vileParleImg from "@/assets/vile_parle.jpg";
 import thaneImg from "@/assets/thane.jpg";
@@ -250,6 +251,7 @@ const MobileLocationsShowcase = () => {
 const LocationsSection = () => {
   return (
     <section className="relative section-dark-b noise-bg grid-bg px-4 py-10 md:px-8 md:py-20">
+      <GridGlow />
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
           <div className="mb-10 text-center md:mb-14">

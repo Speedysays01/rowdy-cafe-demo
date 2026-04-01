@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
+import GridGlow from "./GridGlow";
 import { Award, Factory, Star, MapPin } from "lucide-react";
 import ownerImg from "@/assets/owner.png";
 
@@ -11,6 +12,7 @@ const badges = [
 
 const FounderSection = () => (
   <section className="section-padding relative noise-bg section-dark-d grid-bg overflow-hidden">
+    <GridGlow />
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
         <div className="text-center mb-14">

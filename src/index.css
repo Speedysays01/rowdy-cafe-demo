@@ -293,22 +293,21 @@
     inset: 0;
     background-image:
       linear-gradient(hsl(0 0% 100% / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(0 0% 100% / 0.04) 1px, transparent 1px),
-      radial-gradient(ellipse 28px 28px at 84px 56px, hsl(48 96% 53% / 0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 252px 140px, hsl(20 90% 50% / 0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 140px 308px, hsl(5 85% 45% / 0.05) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 336px 28px, hsl(48 96% 53% / 0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 28px 196px, hsl(20 90% 50% / 0.05) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 308px 252px, hsl(48 96% 53% / 0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 196px 84px, hsl(5 85% 45% / 0.04) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 56px 364px, hsl(20 90% 50% / 0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 364px 168px, hsl(48 96% 53% / 0.05) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 168px 420px, hsl(5 85% 45% / 0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 280px 392px, hsl(20 90% 50% / 0.07) 0%, transparent 70%),
-      radial-gradient(ellipse 28px 28px at 420px 336px, hsl(48 96% 53% / 0.05) 0%, transparent 70%);
-    background-size: 28px 28px, 28px 28px, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
+      linear-gradient(90deg, hsl(0 0% 100% / 0.04) 1px, transparent 1px);
+    background-size: 28px 28px, 28px 28px;
     pointer-events: none;
     z-index: 0;
+  }
+
+  @keyframes grid-cell-glow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  .grid-glow-cell {
+    animation: grid-cell-glow ease-in-out infinite;
+    border-radius: 1px;
+  }
   }
 
   .diagonal-stripe {
