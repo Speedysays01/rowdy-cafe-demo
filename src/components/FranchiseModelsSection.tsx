@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import cartImg from "@/assets/cart-model.png";
 import miniCafeImg from "@/assets/mini-cafe-model.png";
 import foodTruckImg from "@/assets/food-truck-model.png";
