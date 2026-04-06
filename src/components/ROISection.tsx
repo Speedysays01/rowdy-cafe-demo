@@ -78,7 +78,7 @@ const ROISection = () => {
 
         {/* Scenario tabs */}
         <AnimatedSection>
-          <div className="flex justify-center gap-2 sm:gap-3 mb-10">
+          <div className="flex justify-center gap-2 sm:gap-3 mb-6">
             {scenarios.map((sc, i) => (
               <motion.button
                 key={i}
