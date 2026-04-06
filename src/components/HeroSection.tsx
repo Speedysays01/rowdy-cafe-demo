@@ -116,7 +116,7 @@ const HeroContent = () => {
               className="rounded-full"
             >
               <Button variant="hero" size="default" className="text-xs px-4 py-3 whitespace-nowrap" asChild>
-                <a href="#booking">🔥 Book Meeting</a>
+                <a href="https://cal.com/rowdycafe/15min" target="_blank" rel="noopener noreferrer">🔥 Book Meeting</a>
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
