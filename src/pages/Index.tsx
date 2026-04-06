@@ -37,7 +37,6 @@ const Index = () => {
         <ROISection />
         <BookingSection />
         <ContactSection />
-        <ContactSection />
       </div>
     </>
   );
