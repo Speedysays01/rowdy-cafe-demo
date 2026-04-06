@@ -250,11 +250,11 @@ const MobileLocationsShowcase = () => {
 
 const LocationsSection = () => {
   return (
-    <section className="relative section-dark-b noise-bg grid-bg px-4 py-10 md:px-8 md:py-20">
+    <section className="relative section-dark-b noise-bg grid-bg px-4 py-8 md:px-8 md:py-14">
       
       <div className="container relative z-10 mx-auto max-w-5xl">
         <AnimatedSection>
-          <div className="mb-10 text-center md:mb-14">
+          <div className="mb-6 text-center md:mb-10">
             <span className="mb-4 block text-xs font-display uppercase tracking-[0.3em] text-accent">
               📍 Our Locations
             </span>

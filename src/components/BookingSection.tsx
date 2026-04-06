@@ -18,10 +18,10 @@ const BookingSection = () => {
   };
 
   return (
-    <section id="booking" className="section-padding relative noise-bg section-dark-b overflow-hidden">
+    <section id="booking" className="relative noise-bg section-dark-b overflow-hidden py-8 md:py-14 px-4 md:px-8">
       <div className="container mx-auto max-w-4xl relative z-10">
         <AnimatedSection>
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
               🚀 Get Started
             </span>

@@ -57,10 +57,10 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
 };
 
 const ProfitSection = () => (
-  <section className="section-padding relative noise-bg section-dark-c section-stripe-overlay overflow-hidden">
+  <section className="relative noise-bg section-dark-c section-stripe-overlay overflow-hidden py-8 md:py-14 px-4 md:px-8">
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
-        <div className="text-center mb-14 heading-glow">
+        <div className="text-center mb-8 heading-glow">
           <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">💰 The Numbers</span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-center mb-4">
             High <span className="brush-heading">Profit Margin</span> Cafe Model

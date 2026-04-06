@@ -274,7 +274,7 @@ const MenuSection = () => {
   const cat = categories[active];
 
   return (
-    <section id="menu" className="section-padding relative overflow-hidden">
+    <section id="menu" className="relative overflow-hidden py-8 md:py-14 px-4 md:px-8">
       {/* Fire video background */}
       <video
         autoPlay
