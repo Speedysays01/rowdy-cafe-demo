@@ -4,33 +4,47 @@ import useEmblaCarousel from "embla-carousel-react";
 import AnimatedSection from "./AnimatedSection";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import foodMomos from "@/assets/food-tandoori-momos.jpg";
-import foodCorndogs from "@/assets/food-corndogs.jpg";
-import foodWings from "@/assets/food-wings.jpg";
-import foodBurger from "@/assets/food-burger.jpg";
-import foodWaffles from "@/assets/food-waffles.jpg";
-import foodBeverages from "@/assets/food-beverages.jpg";
-import foodRamen from "@/assets/food-ramen.jpg";
-import foodPizza from "@/assets/food-pizza.jpg";
+// --- Menu images ---
+import steamMomos from "@/assets/menu/steam-momos.png";
+import tandooriMomos from "@/assets/menu/tandoori-momos.png";
+import saucyMomos from "@/assets/menu/saucy-momos.png";
+import kurkureMomos from "@/assets/menu/kurkure-momos.png";
+import friedMomos from "@/assets/menu/fried-momos.png";
+import friedMomos2 from "@/assets/menu/fried-momos-2.png";
+import jholMomos from "@/assets/menu/jhol-momos.png";
+import ramen from "@/assets/menu/ramen.png";
+import vegRamen from "@/assets/menu/veg-ramen.png";
+import burger from "@/assets/menu/burger.png";
+import pasta from "@/assets/menu/pasta.png";
+import cornDog from "@/assets/menu/corn-dog.png";
+import frenchFries from "@/assets/menu/french-fries.png";
+import messyWings from "@/assets/menu/messy-wings.png";
+import chickenBites from "@/assets/menu/chicken-bites.png";
+import sizzler from "@/assets/menu/sizzler.png";
+import pavBhaji from "@/assets/menu/pav-bhaji.png";
+import biryani from "@/assets/menu/biryani.png";
+import waffle from "@/assets/menu/waffle.png";
+import sizzlingBrownie from "@/assets/menu/sizzling-brownie.png";
+import milkshake from "@/assets/menu/milkshake.png";
+import kitKatShake from "@/assets/menu/kit-kat-shake.png";
+import desertShake from "@/assets/menu/desert-shake.png";
+import mocktail from "@/assets/menu/mocktail.png";
+import mojito from "@/assets/menu/mojito.png";
+import iceTea from "@/assets/menu/ice-tea.png";
+import coldCoffee from "@/assets/menu/cold-coffee.png";
+import bobaTea from "@/assets/menu/boba-tea.png";
+import bubbleTea from "@/assets/menu/bubble-tea.png";
 
-import imgMomos from "@/assets/menu-momos.jpg";
-import imgRamen from "@/assets/menu-ramen.jpg";
-import imgCorndogs from "@/assets/menu-corndogs.jpg";
-import imgPizza from "@/assets/menu-pizza.jpg";
-import imgBurgers from "@/assets/menu-burgers.jpg";
-import imgWings from "@/assets/menu-wings.jpg";
-import imgDesserts from "@/assets/menu-desserts.jpg";
-import imgBeverages from "@/assets/menu-beverages.jpg";
-import imgInnovations from "@/assets/menu-innovations.jpg";
-
-// --- Featured items for carousel ---
+// --- Featured items for top carousel ---
 const featured = [
-  { name: "Tandoori Momos", tag: "Best Seller", image: foodMomos },
-  { name: "Korean Corn Dogs", tag: "Trending", image: foodCorndogs },
-  { name: "Chicken Wings", tag: "Spicy", image: foodWings },
-  { name: "Loaded Burgers", tag: "Fan Favourite", image: foodBurger },
-  { name: "Waffles & Brownies", tag: "Sweet", image: foodWaffles },
-  { name: "Boba & Shakes", tag: "Refreshing", image: foodBeverages },
+  { name: "Tandoori Momos", tag: "Best Seller", image: tandooriMomos },
+  { name: "Korean Corn Dog", tag: "Trending", image: cornDog },
+  { name: "Messy Wings", tag: "Spicy", image: messyWings },
+  { name: "Burger", tag: "Fan Favourite", image: burger },
+  { name: "Sizzling Brownie", tag: "Sweet", image: sizzlingBrownie },
+  { name: "Bubble Tea", tag: "Refreshing", image: bubbleTea },
+  { name: "Biryani", tag: "Loaded", image: biryani },
+  { name: "Kit Kat Shake", tag: "Indulgent", image: kitKatShake },
 ];
 
 // --- Categories ---
@@ -38,107 +52,80 @@ const categories = [
   {
     id: "momos",
     label: "🥟 Momos",
-    image: imgMomos,
-    heroImage: foodMomos,
     tagline: "12 varieties supplied directly from our factory.",
     items: [
-      { name: "Steam Momos", desc: "Classic steamed dumplings" },
-      { name: "Fried Momos", desc: "Crispy golden fried" },
-      { name: "Tandoori Momos", desc: "Pre-marinated, tandoor-ready" },
-      { name: "Kurkure Momos", desc: "Crunchy coated momos" },
-      { name: "Afghani Momos", desc: "Creamy afghani gravy" },
-      { name: "Cheese Momos", desc: "Loaded with cheese" },
+      { name: "Steam Momos", image: steamMomos },
+      { name: "Fried Momos", image: friedMomos },
+      { name: "Fried Momos", image: friedMomos2 },
+      { name: "Tandoori Momos", image: tandooriMomos },
+      { name: "Kurkure Momos", image: kurkureMomos },
+      { name: "Saucy AF Momos", image: saucyMomos },
+      { name: "Jhol Momos", image: jholMomos },
     ],
-    extras: ["Peri Peri", "Shanghai", "Manchurian", "Schezwan", "Tandoori", "Jhol"],
+    extras: ["Peri Peri", "Shanghai", "Manchurian", "Schezwan", "Tandoori", "Jhol", "Afghani"],
   },
   {
     id: "ramen",
     label: "🍜 Ramen",
-    image: imgRamen,
-    heroImage: foodRamen,
     tagline: "Ramen packets supplied with SOP for toppings.",
     items: [
-      { name: "Classic Ramen", desc: "Rich broth, soft noodles" },
-      { name: "Spicy Ramen", desc: "Fiery chilli broth" },
-      { name: "Miso Ramen", desc: "Japanese style miso" },
+      { name: "Classic Ramen", image: ramen },
+      { name: "Veg Ramen", image: vegRamen },
     ],
   },
   {
-    id: "corndogs",
-    label: "🌭 Corn Dogs",
-    image: imgCorndogs,
-    heroImage: foodCorndogs,
-    tagline: "Korean style, ready-made with full cheese.",
+    id: "mains",
+    label: "🍔 Mains",
+    tagline: "Burgers, pasta, biryani & more — all factory-backed.",
     items: [
-      { name: "Classic Corn Dog", desc: "Crispy batter, cheese filled" },
-      { name: "Mozzarella Corn Dog", desc: "Extra cheese stretch" },
-      { name: "Potato Corn Dog", desc: "Crispy potato coating" },
+      { name: "Loaded Burger", image: burger },
+      { name: "Penne Pasta", image: pasta },
+      { name: "Biryani", image: biryani },
+      { name: "Pav Bhaji", image: pavBhaji },
+      { name: "Sizzler", image: sizzler },
     ],
   },
   {
-    id: "pizza",
-    label: "🍕 Pizza",
-    image: imgPizza,
-    heroImage: foodPizza,
-    tagline: "Ready-made pizzas with cheese and sauce supplied.",
+    id: "snacks",
+    label: "🍟 Snacks",
+    tagline: "Corn dogs, fries, wings & bites — crowd favourites.",
     items: [
-      { name: "Margherita", desc: "Classic cheese & basil" },
-      { name: "Cheese Burst", desc: "Extra loaded cheese" },
-      { name: "Paneer Tikka Pizza", desc: "Indian fusion flavour" },
-      { name: "Veggie Supreme", desc: "Loaded vegetables" },
-      { name: "Rowdy Special", desc: "House special toppings" },
+      { name: "Korean Corn Dog", image: cornDog },
+      { name: "Rowdy Fries", image: frenchFries },
+      { name: "Messy Wings", image: messyWings },
+      { name: "Chicken Bites", image: chickenBites },
     ],
   },
   {
-    id: "burgers",
-    label: "🍔 Burgers",
-    image: imgBurgers,
-    heroImage: foodBurger,
-    tagline: "Veg & chicken patties supplied from factory.",
+    id: "shakes",
+    label: "🥤 Shakes",
+    tagline: "Thick shakes & cold coffee — all syrups supplied.",
     items: [
-      { name: "Classic Burger", desc: "Juicy patty, fresh bun" },
-      { name: "Cheese Burst Burger", desc: "Double cheese loaded" },
-      { name: "Chicken Burger", desc: "Crispy chicken patty" },
-      { name: "Double Decker", desc: "Two patties stacked" },
+      { name: "Kit Kat Shake", image: kitKatShake },
+      { name: "Blueberry Shake", image: milkshake },
+      { name: "Dessert Shake", image: desertShake },
+      { name: "Cold Coffee", image: coldCoffee },
     ],
   },
   {
-    id: "wings",
-    label: "🍗 Wings",
-    image: imgWings,
-    heroImage: foodWings,
-    tagline: "4 wing varieties + 3 chicken bites, all factory-supplied.",
+    id: "beverages",
+    label: "🧋 Beverages",
+    tagline: "Bubble tea, mocktails, mojitos & more — 17 flavors.",
     items: [
-      { name: "BBQ Wings", desc: "Smoky barbecue glaze" },
-      { name: "Peri Peri Wings", desc: "Spicy African style" },
-      { name: "Hot Wings", desc: "Extra fiery coating" },
-      { name: "Chicken Bites", desc: "Crispy popcorn bites" },
+      { name: "Bubble Tea", image: bubbleTea },
+      { name: "Boba Tea", image: bobaTea },
+      { name: "Mocktail", image: mocktail },
+      { name: "Blue Mojito", image: mojito },
+      { name: "Ice Tea", image: iceTea },
     ],
   },
   {
     id: "desserts",
     label: "🧁 Desserts",
-    image: imgDesserts,
-    heroImage: foodWaffles,
-    tagline: "Waffle powder & ready-to-cook brownies supplied.",
+    tagline: "Waffles & sizzling brownies — ready-to-cook.",
     items: [
-      { name: "Belgian Waffles", desc: "Crispy, topped with ice cream" },
-      { name: "Chocolate Brownie", desc: "Warm, gooey centre" },
-      { name: "Brownie Sundae", desc: "With ice cream & sauce" },
-    ],
-  },
-  {
-    id: "beverages",
-    label: "🥤 Beverages",
-    image: imgBeverages,
-    heroImage: foodBeverages,
-    tagline: "17 syrups & flavors supplied with full SOP.",
-    items: [
-      { name: "Bubble Tea", desc: "6 unique flavors" },
-      { name: "Boba Tea", desc: "Milky boba varieties" },
-      { name: "Cold Coffee", desc: "Classic & flavoured" },
-      { name: "Mojitos", desc: "Refreshing coolers" },
-      { name: "Fruit Shakes", desc: "Mango, Strawberry & more" },
+      { name: "Belgian Waffle", image: waffle },
+      { name: "Sizzling Brownie", image: sizzlingBrownie },
     ],
   },
 ];
@@ -189,11 +176,10 @@ const CategoryCarousel = ({ cat }: { cat: typeof categories[0] }) => {
     emblaApi.on("reInit", onSelect);
     onSelect();
 
-    // Auto-scroll in reverse direction
     const interval = setInterval(() => {
-      if (emblaApi.canScrollPrev()) emblaApi.scrollPrev();
-      else emblaApi.scrollTo(emblaApi.scrollSnapList().length - 1);
-    }, 2500);
+      if (emblaApi.canScrollNext()) emblaApi.scrollNext();
+      else emblaApi.scrollTo(0);
+    }, 3000);
 
     return () => {
       clearInterval(interval);
@@ -230,51 +216,31 @@ const CategoryCarousel = ({ cat }: { cat: typeof categories[0] }) => {
         </div>
       </div>
 
-      {/* Mobile: Hero image on top */}
-      <div className="md:hidden mb-4">
-        <div className="overflow-hidden border border-border rounded-2xl">
-          <div className="relative overflow-hidden aspect-video">
-            <img
-              src={cat.heroImage}
-              alt={cat.label}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-          </div>
-        </div>
-      </div>
-
-      {/* Carousel */}
+      {/* Carousel of image cards */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-3">
-          {/* Desktop: Hero image as first slide */}
-          <div className="hidden md:block flex-shrink-0 w-[35%]">
-            <TiltCard className="overflow-hidden border border-border hover:border-primary/40 rounded-2xl h-full">
-              <div className="relative overflow-hidden aspect-[3/4] group">
-                <img
-                  src={cat.heroImage}
-                  alt={cat.label}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              </div>
-            </TiltCard>
-          </div>
-
-          {/* Item slides */}
           {cat.items.map((item, i) => (
             <motion.div
-              key={item.name}
-              className="flex-shrink-0 w-[38%] md:w-[22%]"
+              key={`${item.name}-${i}`}
+              className="flex-shrink-0 w-[42%] sm:w-[35%] md:w-[24%]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
             >
-              <TiltCard className="rowdy-card p-4 md:p-5 h-full group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30 flex flex-col justify-center aspect-square md:aspect-[3/4]">
-                <p className="text-sm md:text-base font-display font-bold mb-1 md:mb-2 group-hover:text-primary transition-colors">
-                  {item.name}
-                </p>
-                <p className="text-[10px] md:text-xs text-muted-foreground font-body">{item.desc}</p>
+              <TiltCard className="rowdy-card overflow-hidden group hover:shadow-[0_0_20px_hsl(48_96%_53%/0.1)] hover:border-primary/30">
+                <div className="relative aspect-square overflow-hidden bg-background/30">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="px-3 py-2.5 text-center border-t border-border/30">
+                  <p className="text-xs sm:text-sm font-display font-bold group-hover:text-primary transition-colors">
+                    {item.name}
+                  </p>
+                </div>
               </TiltCard>
             </motion.div>
           ))}
@@ -306,7 +272,6 @@ const CategoryCarousel = ({ cat }: { cat: typeof categories[0] }) => {
 const MenuSection = () => {
   const [active, setActive] = useState(0);
   const cat = categories[active];
-  
 
   return (
     <section id="menu" className="section-padding relative overflow-hidden">
@@ -349,7 +314,6 @@ const MenuSection = () => {
         {/* --- Featured Infinite Slider --- */}
         <AnimatedSection delay={0.1}>
           <div className="relative mt-10 mb-14 overflow-hidden">
-            {/* Fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-12 md:w-20 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent" />
             <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent" />
 
@@ -360,26 +324,25 @@ const MenuSection = () => {
                 x: { duration: 25, repeat: Infinity, ease: "linear" },
               }}
             >
-              {/* Duplicate items for seamless loop */}
               {[...featured, ...featured].map((item, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-[240px] md:w-[300px] relative group cursor-pointer overflow-hidden rounded-2xl border border-border hover:border-primary/50 transition-colors"
+                  className="flex-shrink-0 w-[200px] md:w-[260px] relative group cursor-pointer overflow-hidden rounded-2xl border border-border hover:border-primary/50 transition-colors"
                 >
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                  <div className="relative overflow-hidden aspect-square bg-background/30">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-primary/10 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
                     <span className="text-[10px] font-display tracking-widest text-primary mb-1 block font-medium">
                       {item.tag}
                     </span>
-                    <p className="text-sm md:text-base font-headline font-semibold">{item.name}</p>
+                    <p className="text-sm font-headline font-semibold">{item.name}</p>
                   </div>
                 </div>
               ))}
@@ -387,78 +350,69 @@ const MenuSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* --- Category Selector (pill buttons) --- */}
+        {/* --- Category Selector --- */}
         <AnimatedSection>
           <div className="relative">
-            {/* Fade hint right */}
             <div className="absolute right-0 top-0 bottom-3 w-10 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent" />
-            {/* Fade hint left */}
             <div className="absolute left-0 top-0 bottom-3 w-6 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent" />
             <div
               className="flex gap-2 overflow-x-auto pb-3 mb-2 scrollbar-hide"
               style={{ scrollbarWidth: "none" }}
-              ref={(el) => {
-                if (!el) return;
-                // Duplicate content for infinite scroll illusion
-                const handleScroll = () => {
-                  const halfWidth = el.scrollWidth / 2;
-                  if (el.scrollLeft >= halfWidth) {
-                    el.scrollLeft -= halfWidth;
-                  } else if (el.scrollLeft <= 0) {
-                    el.scrollLeft += halfWidth;
-                  }
-                };
-                el.addEventListener("scroll", handleScroll);
-              }}
             >
-              {[...categories, ...categories].map((c, i) => {
-                const realIndex = i % categories.length;
-                return (
-                  <motion.button
-                    key={`${c.id}-${i}`}
-                    onClick={() => setActive(realIndex)}
-                    className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display font-medium tracking-wide transition-all border whitespace-nowrap ${
-                      active === realIndex
-                        ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.2)]"
-                        : "bg-transparent text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {c.label}
-                  </motion.button>
-                );
-              })}
+              {categories.map((c, i) => (
+                <motion.button
+                  key={c.id}
+                  onClick={() => setActive(i)}
+                  className={`flex-shrink-0 px-5 py-2.5 rounded-full text-xs md:text-sm font-display font-medium tracking-wide transition-all border whitespace-nowrap ${
+                    active === i
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_15px_hsl(48_96%_53%/0.2)]"
+                      : "bg-transparent text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {c.label}
+                </motion.button>
+              ))}
             </div>
-            {/* Swipe indicator - mobile only */}
-            <div className="flex items-center justify-center gap-1.5 mb-8">
-              <motion.div
-                className="text-[10px] font-display tracking-widest text-muted-foreground/50"
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            {/* Swipe indicator */}
+            <div className="md:hidden flex justify-center mb-4">
+              <motion.span
+                className="text-[10px] text-muted-foreground/50 font-display tracking-widest"
+                animate={{ opacity: [0.3, 0.7, 0.3] }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
-                Swipe for more →
-              </motion.div>
+                ← swipe →
+              </motion.span>
             </div>
-            <div className="hidden md:block mb-8" />
           </div>
         </AnimatedSection>
 
-        {/* --- Active Category Content (Carousel) --- */}
+        {/* --- Active Category --- */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 30 }}
+            key={cat.id}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.35 }}
           >
             <CategoryCarousel cat={cat} />
           </motion.div>
         </AnimatePresence>
 
-
-
+        {/* --- Bottom count --- */}
+        <AnimatedSection delay={0.3}>
+          <div className="mt-12 text-center">
+            <motion.p
+              className="rowdy-card inline-block px-6 py-3 text-sm font-display tracking-wide text-primary font-medium"
+              animate={{ boxShadow: ["0 0 15px hsl(48 96% 53% / 0.1)", "0 0 25px hsl(48 96% 53% / 0.2)", "0 0 15px hsl(48 96% 53% / 0.1)"] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              ✦ 100+ items across 7 categories ✦
+            </motion.p>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
