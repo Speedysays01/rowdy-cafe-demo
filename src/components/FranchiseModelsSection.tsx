@@ -21,7 +21,7 @@ const entryDirections = [
 ];
 
 const FranchiseModelsSection = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { margin: "-50px", amount: 0.2 });
 
   return (
