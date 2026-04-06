@@ -88,14 +88,21 @@ const BookingSection = () => {
               />
             </div>
 
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button variant="hero" size="chunky" className="w-full" type="submit">
+                🚀 Submit Enquiry
+              </Button>
+            </motion.div>
+
             <motion.a
               href="https://cal.com/rowdycafe/15min"
               target="_blank"
               rel="noopener noreferrer"
+              className="block"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Button variant="hero" size="chunky" className="w-full" type="button">
+              <Button variant="heroOutline" size="chunky" className="w-full" type="button">
                 🔥 Book a Franchise Meeting
               </Button>
             </motion.a>
