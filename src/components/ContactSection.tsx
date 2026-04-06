@@ -5,10 +5,10 @@ import { MapPin, Phone, Mail, Instagram, Youtube, Facebook } from "lucide-react"
 import logo from "@/assets/rowdy-logo.png";
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding relative noise-bg section-dark-c grid-bg">
+  <section id="contact" className="relative noise-bg section-dark-c grid-bg py-8 md:py-14 px-4 md:px-8">
     <div className="container mx-auto max-w-5xl relative z-10">
       <AnimatedSection>
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <span className="text-xs font-display tracking-[0.2em] text-accent mb-4 block font-medium">
             📍 Reach Out
           </span>
