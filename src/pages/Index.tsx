@@ -7,7 +7,7 @@ import FounderSection from "@/components/FounderSection";
 import MenuSection from "@/components/MenuSection";
 import InteriorSection from "@/components/InteriorSection";
 import ProfitSection from "@/components/ProfitSection";
-import InvestmentSection from "@/components/InvestmentSection";
+import FranchiseModelsSection from "@/components/FranchiseModelsSection";
 import ROISection from "@/components/ROISection";
 import BookingSection from "@/components/BookingSection";
 import ContactSection from "@/components/ContactSection";
@@ -32,7 +32,7 @@ const Index = () => {
         <MenuSection />
         <InteriorSection />
         <LocationsSection />
-        <InvestmentSection />
+        <FranchiseModelsSection />
         <ProfitSection />
         <ROISection />
         <BookingSection />
