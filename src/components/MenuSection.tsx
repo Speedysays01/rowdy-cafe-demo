@@ -90,12 +90,23 @@ const categories = [
     ],
   },
   {
+    id: "fries",
+    label: "🍟 Fries",
+    tagline: "5 loaded fries variants — all factory prepped.",
+    items: [
+      { name: "Salted Fries", image: saltedFries },
+      { name: "Cheesy French Fries", image: cheesyFrenchFries },
+      { name: "Chilli Cheesy Fries", image: chilliCheesyFries },
+      { name: "Peri Peri Fries", image: periPeriFries },
+      { name: "Rowdy Fries", image: frenchFries },
+    ],
+  },
+  {
     id: "snacks",
-    label: "🍟 Snacks",
-    tagline: "Corn dogs, fries, wings & bites — crowd favourites.",
+    label: "🍗 Snacks",
+    tagline: "Corn dogs, wings & bites — crowd favourites.",
     items: [
       { name: "Korean Corn Dog", image: cornDog },
-      { name: "Rowdy Fries", image: frenchFries },
       { name: "Messy Wings", image: messyWings },
       { name: "Chicken Bites", image: chickenBites },
     ],
