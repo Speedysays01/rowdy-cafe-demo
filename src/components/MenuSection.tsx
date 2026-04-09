@@ -28,6 +28,8 @@ import chickenNuggets from "@/assets/menu/chicken-nuggets.jpg";
 import chickenPopcorn from "@/assets/menu/chicken-popcorn.jpg";
 import chickenFingers from "@/assets/menu/chicken-fingers.jpg";
 import sizzler from "@/assets/menu/sizzler.png";
+import vegSizzler from "@/assets/menu/veg-sizzler.jpg";
+import chickenSizzler from "@/assets/menu/chicken-sizzler.png";
 import pavBhaji from "@/assets/menu/pav-bhaji.png";
 import biryani from "@/assets/menu/biryani.png";
 import waffle from "@/assets/menu/waffle.png";
@@ -89,7 +91,8 @@ const categories = [
       { name: "Penne Pasta", image: pasta },
       { name: "Biryani", image: biryani },
       { name: "Pav Bhaji", image: pavBhaji },
-      { name: "Sizzler", image: sizzler },
+      { name: "Veg Sizzler", image: vegSizzler },
+      { name: "Chicken Sizzler", image: chickenSizzler },
     ],
   },
   {
