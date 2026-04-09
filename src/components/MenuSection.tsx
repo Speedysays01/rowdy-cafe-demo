@@ -75,13 +75,18 @@ import kitkatWaffle from "@/assets/menu/kitkat-waffle.jpeg";
 import nutellaWaffle from "@/assets/menu/nutella-waffle.jpeg";
 import sizzlingBrownie from "@/assets/menu/sizzling-brownie.png";
 import chocolateBrownie from "@/assets/menu/chocolate-brownie.png";
-import milkshake from "@/assets/menu/milkshake.png";
 import kitKatShake from "@/assets/menu/kit-kat-shake.png";
-import desertShake from "@/assets/menu/desert-shake.png";
-import mocktail from "@/assets/menu/mocktail.png";
-import mojito from "@/assets/menu/mojito.png";
+import brownieShake from "@/assets/menu/brownie-shake.png";
+import oreoShake from "@/assets/menu/oreo-shake.jpg";
+import caramelColdCoffee from "@/assets/menu/caramel-cold-coffee.png";
+import caramelCoffee from "@/assets/menu/caramel-coffee.png";
+import coldCoffeeCrush from "@/assets/menu/cold-coffee-crush.png";
+import custardAppleShake from "@/assets/menu/custard-apple-shake.png";
+import guavaShake from "@/assets/menu/guava-shake.png";
+import berryBlastMojito from "@/assets/menu/berry-blast-mojito.png";
+import berryBlast from "@/assets/menu/berry-blast.png";
+import blueCitrus from "@/assets/menu/blue-citrus.png";
 import iceTea from "@/assets/menu/ice-tea.png";
-import coldCoffee from "@/assets/menu/cold-coffee.png";
 import bobaTea from "@/assets/menu/boba-tea.png";
 import bubbleTea from "@/assets/menu/bubble-tea.png";
 
@@ -222,23 +227,28 @@ const categories = [
   {
     id: "shakes",
     label: "🥤 Shakes",
-    tagline: "Thick shakes & cold coffee — all syrups supplied.",
+    tagline: "Loaded shakes & cold coffee — indulgent, fruity, and crowd-friendly.",
     items: [
       { name: "Kit Kat Shake", image: kitKatShake },
-      { name: "Blueberry Shake", image: milkshake },
-      { name: "Dessert Shake", image: desertShake },
-      { name: "Cold Coffee", image: coldCoffee },
+      { name: "Brownie Shake", image: brownieShake },
+      { name: "Oreo Shake", image: oreoShake },
+      { name: "Custard Apple Shake", image: custardAppleShake },
+      { name: "Guava Shake", image: guavaShake },
+      { name: "Caramel Cold Coffee", image: caramelColdCoffee },
+      { name: "Cold Coffee Crush", image: coldCoffeeCrush },
+      { name: "Caramel Coffee", image: caramelCoffee },
     ],
   },
   {
     id: "beverages",
     label: "🧋 Beverages",
-    tagline: "Bubble tea, mocktails, mojitos & more — 17 flavors.",
+    tagline: "Bubble tea, mojitos & coolers — colorful, iced, and refreshing.",
     items: [
       { name: "Bubble Tea", image: bubbleTea },
       { name: "Boba Tea", image: bobaTea },
-      { name: "Mocktail", image: mocktail },
-      { name: "Blue Mojito", image: mojito },
+      { name: "Berry Blast", image: berryBlast },
+      { name: "Berry Blast Mojito", image: berryBlastMojito },
+      { name: "Blue Citrus", image: blueCitrus },
       { name: "Ice Tea", image: iceTea },
     ],
   },
