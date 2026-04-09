@@ -36,6 +36,14 @@ import chickenSchezwanSteamMomo from "@/assets/menu/chicken-schezwan-steam-momo.
 import chickenTikkaSteamMomo from "@/assets/menu/chicken-tikka-steam-momo.jpg";
 import ramen from "@/assets/menu/ramen.png";
 import vegRamen from "@/assets/menu/veg-ramen.png";
+import cheeseRamen from "@/assets/menu/cheese-ramen.png";
+import chickenCheeseRamen from "@/assets/menu/chicken-cheese-ramen.png";
+import chickenRamen from "@/assets/menu/chicken-ramen.png";
+import kimchiRamen from "@/assets/menu/kimchi-ramen.png";
+import kimchiRamen2 from "@/assets/menu/kimchi-ramen-2.jpg";
+import koreanChickenRamen from "@/assets/menu/korean-chicken-ramen.jpg";
+import koreanSpicyVegRamen from "@/assets/menu/korean-spicy-veg-ramen.jpg";
+import cheeseRamen2 from "@/assets/menu/cheese-ramen-2.png";
 import burger from "@/assets/menu/burger.png";
 import pasta from "@/assets/menu/pasta.png";
 import cornDog from "@/assets/menu/corn-dog.png";
