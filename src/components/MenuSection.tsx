@@ -47,6 +47,10 @@ import periPeriFries from "@/assets/menu/peri-peri-fries.jpg";
 import saltedFries from "@/assets/menu/salted-fries.jpg";
 import cheesyFrenchFries from "@/assets/menu/cheesy-french-fries.jpg";
 import messyWings from "@/assets/menu/messy-wings.png";
+import herbWings from "@/assets/menu/herb-wings.png";
+import periPeriWings from "@/assets/menu/peri-peri-wings.png";
+import tandooriWings from "@/assets/menu/tandoori-wings.png";
+import bbqWings from "@/assets/menu/bbq-wings.png";
 import chickenBites from "@/assets/menu/chicken-bites.png";
 import chickenNuggets from "@/assets/menu/chicken-nuggets.jpg";
 import chickenPopcorn from "@/assets/menu/chicken-popcorn.jpg";
@@ -185,6 +189,10 @@ const categories = [
     tagline: "Wings & bites — crowd favourites.",
     items: [
       { name: "Messy Wings", image: messyWings },
+      { name: "Herb Wings", image: herbWings },
+      { name: "Peri Peri Wings", image: periPeriWings },
+      { name: "Tandoori Wings", image: tandooriWings },
+      { name: "BBQ Wings", image: bbqWings },
       { name: "Chicken Nuggets", image: chickenNuggets },
       { name: "Chicken Popcorn", image: chickenPopcorn },
       { name: "Chicken Fingers", image: chickenFingers },
