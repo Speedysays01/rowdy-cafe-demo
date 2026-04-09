@@ -74,6 +74,7 @@ import darkChocWaffle from "@/assets/menu/dark-chocolate-waffle.jpeg";
 import kitkatWaffle from "@/assets/menu/kitkat-waffle.jpeg";
 import nutellaWaffle from "@/assets/menu/nutella-waffle.jpeg";
 import sizzlingBrownie from "@/assets/menu/sizzling-brownie.png";
+import chocolateBrownie from "@/assets/menu/chocolate-brownie.png";
 import milkshake from "@/assets/menu/milkshake.png";
 import kitKatShake from "@/assets/menu/kit-kat-shake.png";
 import desertShake from "@/assets/menu/desert-shake.png";
@@ -253,7 +254,7 @@ const categories = [
       { name: "Dark Chocolate", image: darkChocWaffle },
       { name: "Kit Kat Waffle", image: kitkatWaffle },
       { name: "Nutella Waffle", image: nutellaWaffle },
-      { name: "Sizzling Brownie", image: sizzlingBrownie },
+      { name: "Sizzling Brownie", image: chocolateBrownie },
     ],
   },
 ];
