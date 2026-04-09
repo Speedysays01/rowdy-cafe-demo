@@ -37,6 +37,12 @@ import chickenSizzler from "@/assets/menu/chicken-sizzler.png";
 import pavBhaji from "@/assets/menu/pav-bhaji.png";
 import biryani from "@/assets/menu/biryani.png";
 import waffle from "@/assets/menu/waffle.png";
+import oreoWaffle from "@/assets/menu/oreo-waffle.jpeg";
+import tripleChocWaffle from "@/assets/menu/triple-chocolate-waffle.jpeg";
+import darkWhiteWaffle from "@/assets/menu/dark-and-white-waffle.jpeg";
+import darkChocWaffle from "@/assets/menu/dark-chocolate-waffle.jpeg";
+import kitkatWaffle from "@/assets/menu/kitkat-waffle.jpeg";
+import nutellaWaffle from "@/assets/menu/nutella-waffle.jpeg";
 import sizzlingBrownie from "@/assets/menu/sizzling-brownie.png";
 import milkshake from "@/assets/menu/milkshake.png";
 import kitKatShake from "@/assets/menu/kit-kat-shake.png";
@@ -161,9 +167,15 @@ const categories = [
   {
     id: "desserts",
     label: "🧁 Desserts",
-    tagline: "Waffles & sizzling brownies — ready-to-cook.",
+    tagline: "7 loaded waffles & sizzling brownies — ready-to-cook.",
     items: [
       { name: "Belgian Waffle", image: waffle },
+      { name: "Oreo Waffle", image: oreoWaffle },
+      { name: "Triple Chocolate", image: tripleChocWaffle },
+      { name: "Dark & White", image: darkWhiteWaffle },
+      { name: "Dark Chocolate", image: darkChocWaffle },
+      { name: "Kit Kat Waffle", image: kitkatWaffle },
+      { name: "Nutella Waffle", image: nutellaWaffle },
       { name: "Sizzling Brownie", image: sizzlingBrownie },
     ],
   },
