@@ -58,6 +58,12 @@ import chickenFingers from "@/assets/menu/chicken-fingers.jpg";
 import sizzler from "@/assets/menu/sizzler.png";
 import vegSizzler from "@/assets/menu/veg-sizzler.jpg";
 import chickenSizzler from "@/assets/menu/chicken-sizzler.png";
+import paneerTandooriPizza from "@/assets/menu/paneer-tandoori-pizza-2.png";
+import pepperGarlicChickenPizza from "@/assets/menu/pepper-garlic-chicken-pizza.png";
+import pepperoniChickenPizza from "@/assets/menu/pepperoni-chicken-pizza.png";
+import tandooriChickenPizza from "@/assets/menu/tandoori-chicken-pizza.png";
+import vegFarmhousePizza from "@/assets/menu/veg-farmhouse-pizza.png";
+import vegOnionCapsicumCornPizza from "@/assets/menu/veg-onion-capsicum-corn-pizza.png";
 import pavBhaji from "@/assets/menu/pav-bhaji.png";
 import biryani from "@/assets/menu/biryani.png";
 import waffle from "@/assets/menu/waffle.png";
@@ -157,6 +163,19 @@ const categories = [
       { name: "Pav Bhaji", image: pavBhaji },
       { name: "Veg Sizzler", image: vegSizzler },
       { name: "Chicken Sizzler", image: chickenSizzler },
+    ],
+  },
+  {
+    id: "pizza",
+    label: "🍕 Pizza",
+    tagline: "Loaded veg & chicken pizzas — cheesy, smoky, crowd-pullers.",
+    items: [
+      { name: "Paneer Tandoori Pizza", image: paneerTandooriPizza },
+      { name: "Pepper Garlic Chicken", image: pepperGarlicChickenPizza },
+      { name: "Pepperoni Chicken", image: pepperoniChickenPizza },
+      { name: "Tandoori Chicken Pizza", image: tandooriChickenPizza },
+      { name: "Veg Farmhouse Pizza", image: vegFarmhousePizza },
+      { name: "Onion Capsicum Corn", image: vegOnionCapsicumCornPizza },
     ],
   },
   {
@@ -518,7 +537,7 @@ const MenuSection = () => {
               animate={{ boxShadow: ["0 0 15px hsl(48 96% 53% / 0.1)", "0 0 25px hsl(48 96% 53% / 0.2)", "0 0 15px hsl(48 96% 53% / 0.1)"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              ✦ 100+ items across 9 categories ✦
+              ✦ 100+ items across 10 categories ✦
             </motion.p>
           </div>
         </AnimatedSection>
