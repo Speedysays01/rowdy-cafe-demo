@@ -18,6 +18,10 @@ import burger from "@/assets/menu/burger.png";
 import pasta from "@/assets/menu/pasta.png";
 import cornDog from "@/assets/menu/corn-dog.png";
 import frenchFries from "@/assets/menu/french-fries.png";
+import chilliCheesyFries from "@/assets/menu/chilli-cheesy-fries.jpg";
+import periPeriFries from "@/assets/menu/peri-peri-fries.jpg";
+import saltedFries from "@/assets/menu/salted-fries.jpg";
+import cheesyFrenchFries from "@/assets/menu/cheesy-french-fries.jpg";
 import messyWings from "@/assets/menu/messy-wings.png";
 import chickenBites from "@/assets/menu/chicken-bites.png";
 import sizzler from "@/assets/menu/sizzler.png";
@@ -86,12 +90,23 @@ const categories = [
     ],
   },
   {
+    id: "fries",
+    label: "🍟 Fries",
+    tagline: "5 loaded fries variants — all factory prepped.",
+    items: [
+      { name: "Salted Fries", image: saltedFries },
+      { name: "Cheesy French Fries", image: cheesyFrenchFries },
+      { name: "Chilli Cheesy Fries", image: chilliCheesyFries },
+      { name: "Peri Peri Fries", image: periPeriFries },
+      { name: "Rowdy Fries", image: frenchFries },
+    ],
+  },
+  {
     id: "snacks",
-    label: "🍟 Snacks",
-    tagline: "Corn dogs, fries, wings & bites — crowd favourites.",
+    label: "🍗 Snacks",
+    tagline: "Corn dogs, wings & bites — crowd favourites.",
     items: [
       { name: "Korean Corn Dog", image: cornDog },
-      { name: "Rowdy Fries", image: frenchFries },
       { name: "Messy Wings", image: messyWings },
       { name: "Chicken Bites", image: chickenBites },
     ],
@@ -409,7 +424,7 @@ const MenuSection = () => {
               animate={{ boxShadow: ["0 0 15px hsl(48 96% 53% / 0.1)", "0 0 25px hsl(48 96% 53% / 0.2)", "0 0 15px hsl(48 96% 53% / 0.1)"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              ✦ 100+ items across 7 categories ✦
+              ✦ 100+ items across 8 categories ✦
             </motion.p>
           </div>
         </AnimatedSection>
