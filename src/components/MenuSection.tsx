@@ -7,6 +7,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 // --- Menu images ---
 import steamMomos from "@/assets/menu/steam-momos.png";
 import tandooriMomos from "@/assets/menu/tandoori-momos.png";
+import chickenTandooriMomos from "@/assets/menu/chicken-tandoori-momos.png";
+import chickenCheeseTandooriMomos from "@/assets/menu/chicken-cheese-tandoori-momos.png";
 import saucyMomos from "@/assets/menu/saucy-momos.png";
 import kurkureMomos from "@/assets/menu/kurkure-momos.png";
 import friedMomos from "@/assets/menu/fried-momos.png";
@@ -142,7 +144,9 @@ const categories = [
     label: "🔥 Special Momos",
     tagline: "Tandoori, kurkure, saucy & jhol — signature styles.",
     items: [
-      { name: "Tandoori Momos", image: tandooriMomos },
+      { name: "Veg Tandoori Momos", image: tandooriMomos },
+      { name: "Chicken Tandoori", image: chickenTandooriMomos },
+      { name: "Chicken Cheese Tandoori", image: chickenCheeseTandooriMomos },
       { name: "Kurkure Momos", image: kurkureMomos },
       { name: "Saucy AF Momos", image: saucyMomos },
       { name: "Jhol Momos", image: jholMomos },
