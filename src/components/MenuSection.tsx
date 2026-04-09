@@ -424,7 +424,7 @@ const MenuSection = () => {
               animate={{ boxShadow: ["0 0 15px hsl(48 96% 53% / 0.1)", "0 0 25px hsl(48 96% 53% / 0.2)", "0 0 15px hsl(48 96% 53% / 0.1)"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              ✦ 100+ items across 7 categories ✦
+              ✦ 100+ items across 8 categories ✦
             </motion.p>
           </div>
         </AnimatedSection>
