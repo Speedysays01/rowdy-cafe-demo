@@ -11,17 +11,27 @@ import saucyMomos from "@/assets/menu/saucy-momos.png";
 import kurkureMomos from "@/assets/menu/kurkure-momos.png";
 import friedMomos from "@/assets/menu/fried-momos.png";
 import friedMomos2 from "@/assets/menu/fried-momos-2.png";
-import chickenTikkaMomo from "@/assets/menu/chicken-tikka-momo.jpg";
+import chickenTikkaFriedMomo from "@/assets/menu/chicken-tikka-momo.jpg";
 import paneerAchariFriedMomo from "@/assets/menu/paneer-achari-fried-momo.jpg";
 import paneerPeriPeriFriedMomo from "@/assets/menu/paneer-peri-peri-fried-momo.jpg";
 import pizzaFriedMomo from "@/assets/menu/pizza-fried-momo.jpg";
 import vegCheeseFriedMomo from "@/assets/menu/veg-cheese-fried-momo.jpg";
 import vegFriedMomo from "@/assets/menu/veg-fried-momo.jpg";
 import vegPeriPeriFriedMomo from "@/assets/menu/veg-peri-peri-fried-momo.jpg";
-import chickenCheeseMomo from "@/assets/menu/chicken-cheese-momo.jpg";
+import chickenCheeseFriedMomo from "@/assets/menu/chicken-cheese-momo.jpg";
 import chickenFriedMomo from "@/assets/menu/chicken-fried-momo.jpg";
-import chickenSchezwanMomo from "@/assets/menu/chicken-schezwan-momo.jpg";
+import chickenSchezwanFriedMomo from "@/assets/menu/chicken-schezwan-momo.jpg";
 import jholMomos from "@/assets/menu/jhol-momos.png";
+// Steam momo variants
+import vegSteamMomo from "@/assets/menu/veg-steam-momo.jpg";
+import vegCheeseSteamMomo from "@/assets/menu/veg-cheese-steam-momo.jpg";
+import vegPeriPeriSteamMomo from "@/assets/menu/veg-peri-peri-steam-momo.jpg";
+import paneerAchariSteamMomo from "@/assets/menu/paneer-achari-steam-momo.jpg";
+import paneerPeriPeriSteamMomo from "@/assets/menu/paneer-peri-peri-steam-momo.jpg";
+import pizzaSteamMomo from "@/assets/menu/pizza-steam-momo.jpg";
+import chickenPeriPeriSteamMomo from "@/assets/menu/chicken-peri-peri-steam-momo.jpg";
+import chickenSchezwanSteamMomo from "@/assets/menu/chicken-schezwan-steam-momo.jpg";
+import chickenTikkaSteamMomo from "@/assets/menu/chicken-tikka-steam-momo.jpg";
 import ramen from "@/assets/menu/ramen.png";
 import vegRamen from "@/assets/menu/veg-ramen.png";
 import burger from "@/assets/menu/burger.png";
@@ -79,11 +89,26 @@ const featured = [
 // --- Categories ---
 const categories = [
   {
-    id: "momos",
-    label: "🥟 Momos",
-    tagline: "12 varieties supplied directly from our factory.",
+    id: "steam-momos",
+    label: "🥟 Steam Momos",
+    tagline: "Factory-fresh steamed momos — 9 flavours.",
     items: [
-      { name: "Steam Momos", image: steamMomos },
+      { name: "Veg Steam", image: vegSteamMomo },
+      { name: "Veg Cheese", image: vegCheeseSteamMomo },
+      { name: "Veg Peri Peri", image: vegPeriPeriSteamMomo },
+      { name: "Paneer Achari", image: paneerAchariSteamMomo },
+      { name: "Paneer Peri Peri", image: paneerPeriPeriSteamMomo },
+      { name: "Pizza Momo", image: pizzaSteamMomo },
+      { name: "Chicken Peri Peri", image: chickenPeriPeriSteamMomo },
+      { name: "Chicken Schezwan", image: chickenSchezwanSteamMomo },
+      { name: "Chicken Tikka", image: chickenTikkaSteamMomo },
+    ],
+  },
+  {
+    id: "fried-momos",
+    label: "🍗 Fried Momos",
+    tagline: "Crispy fried momos — 10 loaded variants.",
+    items: [
       { name: "Veg Fried", image: vegFriedMomo },
       { name: "Veg Cheese Fried", image: vegCheeseFriedMomo },
       { name: "Veg Peri Peri Fried", image: vegPeriPeriFriedMomo },
@@ -91,9 +116,16 @@ const categories = [
       { name: "Paneer Peri Peri Fried", image: paneerPeriPeriFriedMomo },
       { name: "Pizza Fried", image: pizzaFriedMomo },
       { name: "Chicken Fried", image: chickenFriedMomo },
-      { name: "Chicken Cheese", image: chickenCheeseMomo },
-      { name: "Chicken Tikka", image: chickenTikkaMomo },
-      { name: "Chicken Schezwan", image: chickenSchezwanMomo },
+      { name: "Chicken Cheese", image: chickenCheeseFriedMomo },
+      { name: "Chicken Tikka", image: chickenTikkaFriedMomo },
+      { name: "Chicken Schezwan", image: chickenSchezwanFriedMomo },
+    ],
+  },
+  {
+    id: "special-momos",
+    label: "🔥 Special Momos",
+    tagline: "Tandoori, kurkure, saucy & jhol — signature styles.",
+    items: [
       { name: "Tandoori Momos", image: tandooriMomos },
       { name: "Kurkure Momos", image: kurkureMomos },
       { name: "Saucy AF Momos", image: saucyMomos },
