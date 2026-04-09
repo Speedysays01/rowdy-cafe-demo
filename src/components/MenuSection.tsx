@@ -24,6 +24,9 @@ import saltedFries from "@/assets/menu/salted-fries.jpg";
 import cheesyFrenchFries from "@/assets/menu/cheesy-french-fries.jpg";
 import messyWings from "@/assets/menu/messy-wings.png";
 import chickenBites from "@/assets/menu/chicken-bites.png";
+import chickenNuggets from "@/assets/menu/chicken-nuggets.jpg";
+import chickenPopcorn from "@/assets/menu/chicken-popcorn.jpg";
+import chickenFingers from "@/assets/menu/chicken-fingers.jpg";
 import sizzler from "@/assets/menu/sizzler.png";
 import pavBhaji from "@/assets/menu/pav-bhaji.png";
 import biryani from "@/assets/menu/biryani.png";
@@ -108,6 +111,9 @@ const categories = [
     items: [
       { name: "Korean Corn Dog", image: cornDog },
       { name: "Messy Wings", image: messyWings },
+      { name: "Chicken Nuggets", image: chickenNuggets },
+      { name: "Chicken Popcorn", image: chickenPopcorn },
+      { name: "Chicken Fingers", image: chickenFingers },
       { name: "Chicken Bites", image: chickenBites },
     ],
   },
