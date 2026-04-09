@@ -17,6 +17,10 @@ import vegRamen from "@/assets/menu/veg-ramen.png";
 import burger from "@/assets/menu/burger.png";
 import pasta from "@/assets/menu/pasta.png";
 import cornDog from "@/assets/menu/corn-dog.png";
+import chilliGarlicCornDog from "@/assets/menu/chilli-garlic-corn-dog.png";
+import periPeriCornDog from "@/assets/menu/peri-peri-corn-dog.png";
+import tandooriCornDog from "@/assets/menu/tandoori-corn-dog.png";
+import bbqCornDog from "@/assets/menu/bbq-corn-dog.png";
 import frenchFries from "@/assets/menu/french-fries.png";
 import chilliCheesyFries from "@/assets/menu/chilli-cheesy-fries.jpg";
 import periPeriFries from "@/assets/menu/peri-peri-fries.jpg";
@@ -108,11 +112,22 @@ const categories = [
     ],
   },
   {
-    id: "snacks",
-    label: "🍗 Snacks",
-    tagline: "Corn dogs, wings & bites — crowd favourites.",
+    id: "corndogs",
+    label: "🌭 Corn Dogs",
+    tagline: "5 loaded Korean corn dog flavours — cheese pull guaranteed.",
     items: [
       { name: "Korean Corn Dog", image: cornDog },
+      { name: "Chilli Garlic", image: chilliGarlicCornDog },
+      { name: "Peri Peri", image: periPeriCornDog },
+      { name: "Tandoori", image: tandooriCornDog },
+      { name: "BBQ", image: bbqCornDog },
+    ],
+  },
+  {
+    id: "snacks",
+    label: "🍗 Snacks",
+    tagline: "Wings & bites — crowd favourites.",
+    items: [
       { name: "Messy Wings", image: messyWings },
       { name: "Chicken Nuggets", image: chickenNuggets },
       { name: "Chicken Popcorn", image: chickenPopcorn },
