@@ -144,7 +144,9 @@ const categories = [
     label: "🔥 Special Momos",
     tagline: "Tandoori, kurkure, saucy & jhol — signature styles.",
     items: [
-      { name: "Tandoori Momos", image: tandooriMomos },
+      { name: "Veg Tandoori Momos", image: tandooriMomos },
+      { name: "Chicken Tandoori", image: chickenTandooriMomos },
+      { name: "Chicken Cheese Tandoori", image: chickenCheeseTandooriMomos },
       { name: "Kurkure Momos", image: kurkureMomos },
       { name: "Saucy AF Momos", image: saucyMomos },
       { name: "Jhol Momos", image: jholMomos },
