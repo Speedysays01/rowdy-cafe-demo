@@ -34,8 +34,6 @@ import pizzaSteamMomo from "@/assets/menu/pizza-steam-momo.jpg";
 import chickenPeriPeriSteamMomo from "@/assets/menu/chicken-peri-peri-steam-momo.jpg";
 import chickenSchezwanSteamMomo from "@/assets/menu/chicken-schezwan-steam-momo.jpg";
 import chickenTikkaSteamMomo from "@/assets/menu/chicken-tikka-steam-momo.jpg";
-import ramen from "@/assets/menu/ramen.png";
-import vegRamen from "@/assets/menu/veg-ramen.png";
 import cheeseRamen from "@/assets/menu/cheese-ramen.png";
 import chickenCheeseRamen from "@/assets/menu/chicken-cheese-ramen.png";
 import chickenRamen from "@/assets/menu/chicken-ramen.png";
@@ -44,19 +42,15 @@ import kimchiRamen2 from "@/assets/menu/kimchi-ramen-2.jpg";
 import koreanChickenRamen from "@/assets/menu/korean-chicken-ramen.jpg";
 import koreanSpicyVegRamen from "@/assets/menu/korean-spicy-veg-ramen.jpg";
 import cheeseRamen2 from "@/assets/menu/cheese-ramen-2.png";
-import burger from "@/assets/menu/burger.png";
-import pasta from "@/assets/menu/pasta.png";
 import cornDog from "@/assets/menu/corn-dog.png";
 import chilliGarlicCornDog from "@/assets/menu/chilli-garlic-corn-dog.png";
 import periPeriCornDog from "@/assets/menu/peri-peri-corn-dog.png";
 import tandooriCornDog from "@/assets/menu/tandoori-corn-dog.png";
 import bbqCornDog from "@/assets/menu/bbq-corn-dog.png";
-import frenchFries from "@/assets/menu/french-fries.png";
 import chilliCheesyFries from "@/assets/menu/chilli-cheesy-fries.jpg";
 import periPeriFries from "@/assets/menu/peri-peri-fries.jpg";
 import saltedFries from "@/assets/menu/salted-fries.jpg";
 import cheesyFrenchFries from "@/assets/menu/cheesy-french-fries.jpg";
-import messyWings from "@/assets/menu/messy-wings.png";
 import herbWings from "@/assets/menu/herb-wings.png";
 import periPeriWings from "@/assets/menu/peri-peri-wings.png";
 import tandooriWings from "@/assets/menu/tandoori-wings.png";
@@ -65,8 +59,6 @@ import chickenBites from "@/assets/menu/chicken-bites.png";
 import chickenNuggets from "@/assets/menu/chicken-nuggets.jpg";
 import chickenPopcorn from "@/assets/menu/chicken-popcorn.jpg";
 import chickenFingers from "@/assets/menu/chicken-fingers.jpg";
-import sizzler from "@/assets/menu/sizzler.png";
-import vegSizzler from "@/assets/menu/veg-sizzler.jpg";
 import chickenSizzler from "@/assets/menu/chicken-sizzler.png";
 import paneerTandooriPizza from "@/assets/menu/paneer-tandoori-pizza-2.png";
 import pepperGarlicChickenPizza from "@/assets/menu/pepper-garlic-chicken-pizza.png";
@@ -74,42 +66,25 @@ import pepperoniChickenPizza from "@/assets/menu/pepperoni-chicken-pizza.png";
 import tandooriChickenPizza from "@/assets/menu/tandoori-chicken-pizza.png";
 import vegFarmhousePizza from "@/assets/menu/veg-farmhouse-pizza.png";
 import vegOnionCapsicumCornPizza from "@/assets/menu/veg-onion-capsicum-corn-pizza.png";
-import pavBhaji from "@/assets/menu/pav-bhaji.png";
-import biryani from "@/assets/menu/biryani.png";
-import waffle from "@/assets/menu/waffle.png";
-import oreoWaffle from "@/assets/menu/oreo-waffle.jpeg";
-import tripleChocWaffle from "@/assets/menu/triple-chocolate-waffle.jpeg";
-import darkWhiteWaffle from "@/assets/menu/dark-and-white-waffle.jpeg";
-import darkChocWaffle from "@/assets/menu/dark-chocolate-waffle.jpeg";
-import kitkatWaffle from "@/assets/menu/kitkat-waffle.jpeg";
-import nutellaWaffle from "@/assets/menu/nutella-waffle.jpeg";
-import sizzlingBrownie from "@/assets/menu/sizzling-brownie.png";
 import chocolateBrownie from "@/assets/menu/chocolate-brownie.png";
-import kitKatShake from "@/assets/menu/kit-kat-shake.png";
 import brownieShake from "@/assets/menu/brownie-shake.png";
 import oreoShake from "@/assets/menu/oreo-shake.jpg";
-import caramelColdCoffee from "@/assets/menu/caramel-cold-coffee.png";
-import caramelCoffee from "@/assets/menu/caramel-coffee.png";
-import coldCoffeeCrush from "@/assets/menu/cold-coffee-crush.png";
 import custardAppleShake from "@/assets/menu/custard-apple-shake.png";
 import guavaShake from "@/assets/menu/guava-shake.png";
 import berryBlastMojito from "@/assets/menu/berry-blast-mojito.png";
 import berryBlast from "@/assets/menu/berry-blast.png";
 import blueCitrus from "@/assets/menu/blue-citrus.png";
-import iceTea from "@/assets/menu/ice-tea.png";
-import bobaTea from "@/assets/menu/boba-tea.png";
-import bubbleTea from "@/assets/menu/bubble-tea.png";
 
 // --- Featured items for top carousel ---
 const featured = [
-  { name: "Tandoori Momos", tag: "Best Seller", image: tandooriMomos },
-  { name: "Korean Corn Dog", tag: "Trending", image: cornDog },
-  { name: "Messy Wings", tag: "Spicy", image: messyWings },
-  { name: "Burger", tag: "Fan Favourite", image: burger },
-  { name: "Sizzling Brownie", tag: "Sweet", image: sizzlingBrownie },
-  { name: "Bubble Tea", tag: "Refreshing", image: bubbleTea },
-  { name: "Biryani", tag: "Loaded", image: biryani },
-  { name: "Kit Kat Shake", tag: "Indulgent", image: kitKatShake },
+  { name: "Chicken Cheese Tandoori", tag: "Best Seller", image: chickenCheeseTandooriMomos },
+  { name: "Chicken Ramen", tag: "Hot", image: chickenRamen },
+  { name: "Chicken Sizzler", tag: "Loaded", image: chickenSizzler },
+  { name: "Sizzling Brownie", tag: "Sweet", image: chocolateBrownie },
+  { name: "Berry Blast Mojito", tag: "Refreshing", image: berryBlastMojito },
+  { name: "Brownie Shake", tag: "Indulgent", image: brownieShake },
+  { name: "Kimchi Ramen", tag: "Spicy", image: kimchiRamen },
+  { name: "Tandoori Wings", tag: "Smoky", image: tandooriWings },
 ];
 
 // --- Categories ---
@@ -150,14 +125,11 @@ const categories = [
   {
     id: "special-momos",
     label: "🔥 Special Momos",
-    tagline: "Tandoori, kurkure, saucy & jhol — signature styles.",
+    tagline: "Creamy tandoori variants on dark-plate presentation.",
     items: [
       { name: "Veg Tandoori Momos", image: tandooriMomos },
       { name: "Chicken Tandoori", image: chickenTandooriMomos },
       { name: "Chicken Cheese Tandoori", image: chickenCheeseTandooriMomos },
-      { name: "Kurkure Momos", image: kurkureMomos },
-      { name: "Saucy AF Momos", image: saucyMomos },
-      { name: "Jhol Momos", image: jholMomos },
     ],
     extras: ["Peri Peri", "Shanghai", "Manchurian", "Schezwan", "Tandoori", "Jhol", "Afghani"],
   },
@@ -179,15 +151,8 @@ const categories = [
   {
     id: "mains",
     label: "🍔 Mains",
-    tagline: "Burgers, pasta, biryani & more — all factory-backed.",
-    items: [
-      { name: "Loaded Burger", image: burger },
-      { name: "Penne Pasta", image: pasta },
-      { name: "Biryani", image: biryani },
-      { name: "Pav Bhaji", image: pavBhaji },
-      { name: "Veg Sizzler", image: vegSizzler },
-      { name: "Chicken Sizzler", image: chickenSizzler },
-    ],
+    tagline: "Dark-shot hero dishes only.",
+    items: [{ name: "Chicken Sizzler", image: chickenSizzler }],
   },
   {
     id: "pizza",
@@ -205,19 +170,18 @@ const categories = [
   {
     id: "fries",
     label: "🍟 Fries",
-    tagline: "5 loaded fries variants — all factory prepped.",
+    tagline: "Loaded fries variants — all factory prepped.",
     items: [
       { name: "Salted Fries", image: saltedFries },
       { name: "Cheesy French Fries", image: cheesyFrenchFries },
       { name: "Chilli Cheesy Fries", image: chilliCheesyFries },
       { name: "Peri Peri Fries", image: periPeriFries },
-      { name: "Rowdy Fries", image: frenchFries },
     ],
   },
   {
     id: "corndogs",
     label: "🌭 Corn Dogs",
-    tagline: "5 loaded Korean corn dog flavours — cheese pull guaranteed.",
+    tagline: "Loaded Korean corn dog flavours — cheese pull guaranteed.",
     items: [
       { name: "Korean Corn Dog", image: cornDog },
       { name: "Chilli Garlic", image: chilliGarlicCornDog },
@@ -231,7 +195,6 @@ const categories = [
     label: "🍗 Snacks",
     tagline: "Wings & bites — crowd favourites.",
     items: [
-      { name: "Messy Wings", image: messyWings },
       { name: "Herb Wings", image: herbWings },
       { name: "Peri Peri Wings", image: periPeriWings },
       { name: "Tandoori Wings", image: tandooriWings },
@@ -245,45 +208,29 @@ const categories = [
   {
     id: "shakes",
     label: "🥤 Shakes",
-    tagline: "Loaded shakes & cold coffee — indulgent, fruity, and crowd-friendly.",
+    tagline: "Dark-shot shakes only.",
     items: [
-      { name: "Kit Kat Shake", image: kitKatShake },
       { name: "Brownie Shake", image: brownieShake },
       { name: "Oreo Shake", image: oreoShake },
       { name: "Custard Apple Shake", image: custardAppleShake },
       { name: "Guava Shake", image: guavaShake },
-      { name: "Caramel Cold Coffee", image: caramelColdCoffee },
-      { name: "Cold Coffee Crush", image: coldCoffeeCrush },
-      { name: "Caramel Coffee", image: caramelCoffee },
     ],
   },
   {
     id: "beverages",
     label: "🧋 Beverages",
-    tagline: "Bubble tea, mojitos & coolers — colorful, iced, and refreshing.",
+    tagline: "Dark-shot coolers only.",
     items: [
-      { name: "Bubble Tea", image: bubbleTea },
-      { name: "Boba Tea", image: bobaTea },
       { name: "Berry Blast", image: berryBlast },
       { name: "Berry Blast Mojito", image: berryBlastMojito },
       { name: "Blue Citrus", image: blueCitrus },
-      { name: "Ice Tea", image: iceTea },
     ],
   },
   {
     id: "desserts",
     label: "🧁 Desserts",
-    tagline: "7 loaded waffles & sizzling brownies — ready-to-cook.",
-    items: [
-      { name: "Belgian Waffle", image: waffle },
-      { name: "Oreo Waffle", image: oreoWaffle },
-      { name: "Triple Chocolate", image: tripleChocWaffle },
-      { name: "Dark & White", image: darkWhiteWaffle },
-      { name: "Dark Chocolate", image: darkChocWaffle },
-      { name: "Kit Kat Waffle", image: kitkatWaffle },
-      { name: "Nutella Waffle", image: nutellaWaffle },
-      { name: "Sizzling Brownie", image: chocolateBrownie },
-    ],
+    tagline: "Dark-shot desserts only.",
+    items: [{ name: "Sizzling Brownie", image: chocolateBrownie }],
   },
 ];
 
