@@ -166,8 +166,14 @@ const categories = [
     label: "🍜 Ramen",
     tagline: "Ramen packets supplied with SOP for toppings.",
     items: [
-      { name: "Classic Ramen", image: ramen },
-      { name: "Veg Ramen", image: vegRamen },
+      { name: "Korean Spicy Veg", image: koreanSpicyVegRamen },
+      { name: "Cheese Ramen", image: cheeseRamen },
+      { name: "Chicken Ramen", image: chickenRamen },
+      { name: "Chicken Cheese Ramen", image: chickenCheeseRamen },
+      { name: "Kimchi Ramen", image: kimchiRamen },
+      { name: "Kimchi Veg Ramen", image: kimchiRamen2 },
+      { name: "Korean Chicken Ramen", image: koreanChickenRamen },
+      { name: "Creamy Cheese Ramen", image: cheeseRamen2 },
     ],
   },
   {
