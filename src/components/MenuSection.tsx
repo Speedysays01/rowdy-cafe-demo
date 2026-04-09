@@ -166,6 +166,19 @@ const categories = [
     ],
   },
   {
+    id: "pizza",
+    label: "🍕 Pizza",
+    tagline: "Loaded veg & chicken pizzas — cheesy, smoky, crowd-pullers.",
+    items: [
+      { name: "Paneer Tandoori Pizza", image: paneerTandooriPizza },
+      { name: "Pepper Garlic Chicken", image: pepperGarlicChickenPizza },
+      { name: "Pepperoni Chicken", image: pepperoniChickenPizza },
+      { name: "Tandoori Chicken Pizza", image: tandooriChickenPizza },
+      { name: "Veg Farmhouse Pizza", image: vegFarmhousePizza },
+      { name: "Onion Capsicum Corn", image: vegOnionCapsicumCornPizza },
+    ],
+  },
+  {
     id: "fries",
     label: "🍟 Fries",
     tagline: "5 loaded fries variants — all factory prepped.",
@@ -524,7 +537,7 @@ const MenuSection = () => {
               animate={{ boxShadow: ["0 0 15px hsl(48 96% 53% / 0.1)", "0 0 25px hsl(48 96% 53% / 0.2)", "0 0 15px hsl(48 96% 53% / 0.1)"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              ✦ 100+ items across 9 categories ✦
+              ✦ 100+ items across 10 categories ✦
             </motion.p>
           </div>
         </AnimatedSection>
