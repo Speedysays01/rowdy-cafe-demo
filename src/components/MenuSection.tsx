@@ -11,6 +11,16 @@ import saucyMomos from "@/assets/menu/saucy-momos.png";
 import kurkureMomos from "@/assets/menu/kurkure-momos.png";
 import friedMomos from "@/assets/menu/fried-momos.png";
 import friedMomos2 from "@/assets/menu/fried-momos-2.png";
+import chickenTikkaMomo from "@/assets/menu/chicken-tikka-momo.jpg";
+import paneerAchariFriedMomo from "@/assets/menu/paneer-achari-fried-momo.jpg";
+import paneerPeriPeriFriedMomo from "@/assets/menu/paneer-peri-peri-fried-momo.jpg";
+import pizzaFriedMomo from "@/assets/menu/pizza-fried-momo.jpg";
+import vegCheeseFriedMomo from "@/assets/menu/veg-cheese-fried-momo.jpg";
+import vegFriedMomo from "@/assets/menu/veg-fried-momo.jpg";
+import vegPeriPeriFriedMomo from "@/assets/menu/veg-peri-peri-fried-momo.jpg";
+import chickenCheeseMomo from "@/assets/menu/chicken-cheese-momo.jpg";
+import chickenFriedMomo from "@/assets/menu/chicken-fried-momo.jpg";
+import chickenSchezwanMomo from "@/assets/menu/chicken-schezwan-momo.jpg";
 import jholMomos from "@/assets/menu/jhol-momos.png";
 import ramen from "@/assets/menu/ramen.png";
 import vegRamen from "@/assets/menu/veg-ramen.png";
@@ -74,8 +84,16 @@ const categories = [
     tagline: "12 varieties supplied directly from our factory.",
     items: [
       { name: "Steam Momos", image: steamMomos },
-      { name: "Fried Momos", image: friedMomos },
-      { name: "Fried Momos", image: friedMomos2 },
+      { name: "Veg Fried", image: vegFriedMomo },
+      { name: "Veg Cheese Fried", image: vegCheeseFriedMomo },
+      { name: "Veg Peri Peri Fried", image: vegPeriPeriFriedMomo },
+      { name: "Paneer Achari Fried", image: paneerAchariFriedMomo },
+      { name: "Paneer Peri Peri Fried", image: paneerPeriPeriFriedMomo },
+      { name: "Pizza Fried", image: pizzaFriedMomo },
+      { name: "Chicken Fried", image: chickenFriedMomo },
+      { name: "Chicken Cheese", image: chickenCheeseMomo },
+      { name: "Chicken Tikka", image: chickenTikkaMomo },
+      { name: "Chicken Schezwan", image: chickenSchezwanMomo },
       { name: "Tandoori Momos", image: tandooriMomos },
       { name: "Kurkure Momos", image: kurkureMomos },
       { name: "Saucy AF Momos", image: saucyMomos },
