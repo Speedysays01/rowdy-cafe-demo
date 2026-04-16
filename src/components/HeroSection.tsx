@@ -126,16 +126,13 @@ const HeroContent = () => {
             </motion.div>
           </motion.div>
 
-          {/* Feature badges — infinite scroll marquee */}
+          {/* Feature badges — infinite scroll marquee (full-bleed) */}
           <motion.div
-            className="relative w-full overflow-hidden mt-2"
+            className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden mt-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 6.5, duration: 0.6 }}
           >
-            <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-r from-background/80 to-transparent" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none bg-gradient-to-l from-background/80 to-transparent" />
-
             <motion.div
               className="flex gap-10 md:gap-16 w-max items-center py-2"
               animate={{ x: ["0%", "-50%"] }}
@@ -146,8 +143,8 @@ const HeroContent = () => {
                   key={i}
                   className="flex-shrink-0 flex items-center gap-3 md:gap-4 group cursor-default"
                 >
-                  <f.icon className="w-7 h-7 md:w-9 md:h-9 text-primary group-hover:text-accent transition-colors drop-shadow-[0_0_12px_hsl(48_96%_53%/0.5)]" />
-                  <span className="text-xl md:text-3xl lg:text-4xl font-headline tracking-tight text-foreground whitespace-nowrap font-bold uppercase">
+                  <f.icon className="w-7 h-7 md:w-9 md:h-9 text-primary group-hover:text-accent transition-colors" />
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-funky tracking-tight text-foreground whitespace-nowrap uppercase">
                     {f.text}
                   </span>
                   {i < [...features, ...features].length - 1 && (

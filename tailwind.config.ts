@@ -18,6 +18,7 @@ export default {
         headline: ['"Bricolage Grotesque"', 'sans-serif'],
         serif: ['"Playfair Display"', 'serif'],
         body: ['"Inter"', 'sans-serif'],
+        funky: ['"Bungee"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
