@@ -39,15 +39,19 @@ const HeroContent = () => {
       animate={{ x: [0, 0, -10, 8, -5, 3, -1, 0], y: [0, 0, 5, -4, 3, -1, 0, 0] }}
       transition={{ duration: 0.7, delay: 5.6, ease: "easeOut", times: [0, 0.05, 0.15, 0.3, 0.5, 0.7, 0.85, 1] }}
     >
-      {/* Video background */}
+      {/* Video background — optimized + poster for instant first paint */}
       <video
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/videos/hero-poster.jpg"
+        // @ts-expect-error fetchpriority is valid HTML
+        fetchpriority="high"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/videos/hero-bg.mp4?v=2" type="video/mp4" />
+        <source src="/videos/hero-bg-opt.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay for readability */}
