@@ -259,10 +259,10 @@ const LocationsSection = () => {
               📍 Our Locations
             </span>
             <h2 className="mb-3 text-center font-headline text-4xl md:text-7xl">
-              <span className="brush-heading">4 Outlets</span> in Mumbai
+              <span className="brush-heading">15 Outlets</span> in Mumbai
             </h2>
             <p className="mx-auto max-w-xl text-center font-body text-base text-muted-foreground md:text-lg">
-              Find your nearest Rowdy Cafe
+              & 102 Outlets across India
             </p>
           </div>
         </AnimatedSection>
