@@ -79,7 +79,7 @@ const HeroContent = () => {
             <motion.img
               src={rowdyMan}
               alt="Rowdy Cafe"
-              className="h-24 sm:h-28 md:h-36 mx-auto object-contain"
+              className="h-24 sm:h-28 md:h-36 mx-auto rounded-full"
               initial={{ filter: "drop-shadow(0 0 0px transparent)" }}
               animate={{ filter: "drop-shadow(0 0 40px hsl(48 96% 53% / 0.5))" }}
               transition={{ duration: 0.7, delay: 6.5 }}
