@@ -2,18 +2,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { Button } from "@/components/ui/button";
-import { User, Phone, MapPin, IndianRupee, MessageSquare } from "lucide-react";
+import { User, Phone, MapPin, IndianRupee, MessageSquare, Mail } from "lucide-react";
 import { toast } from "sonner";
 
 const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx5AGORoz9OOp3_oAVpPjIKnAB-FM0TA0kfqU7pM8PR4eIjT8EUQbZxE7lV8QJpsr1C/exec";
 
 const BookingSection = () => {
-  const [form, setForm] = useState({ name: "", phone: "", city: "", investment: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", city: "", investment: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (form.name.trim().length < 2) { toast.error("Please enter a valid name."); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) { toast.error("Please enter a valid email address."); return; }
     if (!/^[6-9]\d{9}$/.test(form.phone.trim())) { toast.error("Please enter a valid 10-digit phone number."); return; }
     if (form.city.trim().length < 2) { toast.error("Please enter your city."); return; }
 
@@ -25,6 +26,7 @@ const BookingSection = () => {
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
           name: form.name.trim(),
+          email: form.email.trim(),
           phone: form.phone.trim(),
           city: form.city.trim(),
           investment: form.investment,
@@ -33,7 +35,7 @@ const BookingSection = () => {
         }),
       });
       toast.success("Meeting request submitted! We'll contact you within 24 hours. 🔥");
-      setForm({ name: "", phone: "", city: "", investment: "", message: "" });
+      setForm({ name: "", email: "", phone: "", city: "", investment: "", message: "" });
     } catch {
       toast.error("Something went wrong. Please try again or call us directly.");
     } finally {
@@ -69,6 +71,7 @@ const BookingSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-5">
               {[
                 { icon: User, name: "name", placeholder: "Full Name", type: "text", maxLength: 100 },
+                { icon: Mail, name: "email", placeholder: "Email Address", type: "email", maxLength: 255 },
                 { icon: Phone, name: "phone", placeholder: "Phone Number", type: "tel", maxLength: 10 },
                 { icon: MapPin, name: "city", placeholder: "Your City", type: "text", maxLength: 100 },
               ].map((field) => (
