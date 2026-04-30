@@ -65,7 +65,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
         <img
           src={rowdyMan}
           alt="Rowdy Cafe"
-          className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full"
+          className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-contain"
           style={{
             filter: "drop-shadow(0 0 40px hsl(48 96% 53% / 0.7))",
           }}
