@@ -5,17 +5,42 @@ import { Button } from "@/components/ui/button";
 import { User, Phone, MapPin, IndianRupee, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
 
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycby6xt7fQVvmnseAgJa64xdJD0TKRJhAk5fm8yxieciJu9xta6AWUJ0CXacvK4M2yHYi/exec";
+
 const BookingSection = () => {
   const [form, setForm] = useState({ name: "", phone: "", city: "", investment: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (form.name.trim().length < 2) { toast.error("Please enter a valid name."); return; }
     if (!/^[6-9]\d{9}$/.test(form.phone.trim())) { toast.error("Please enter a valid 10-digit phone number."); return; }
     if (form.city.trim().length < 2) { toast.error("Please enter your city."); return; }
-    toast.success("Meeting request submitted! We'll contact you within 24 hours. 🔥");
-    setForm({ name: "", phone: "", city: "", investment: "", message: "" });
+
+    setSubmitting(true);
+    try {
+      await fetch(SHEETS_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          city: form.city.trim(),
+          investment: form.investment,
+          message: form.message.trim(),
+          source: "booking-form",
+        }),
+      });
+      toast.success("Meeting request submitted! We'll contact you within 24 hours. 🔥");
+      setForm({ name: "", phone: "", city: "", investment: "", message: "" });
+    } catch {
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
+
 
   return (
     <section id="booking" className="relative noise-bg section-dark-b overflow-hidden py-8 md:py-14 px-4 md:px-8">
@@ -89,8 +114,8 @@ const BookingSection = () => {
             </div>
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="hero" size="chunky" className="w-full" type="submit">
-                🚀 Submit Enquiry
+              <Button variant="hero" size="chunky" className="w-full" type="submit" disabled={submitting}>
+                {submitting ? "Submitting..." : "🚀 Submit Enquiry"}
               </Button>
             </motion.div>
 
