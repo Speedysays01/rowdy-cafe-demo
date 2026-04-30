@@ -114,8 +114,8 @@ const BookingSection = () => {
             </div>
 
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="hero" size="chunky" className="w-full" type="submit">
-                🚀 Submit Enquiry
+              <Button variant="hero" size="chunky" className="w-full" type="submit" disabled={submitting}>
+                {submitting ? "Submitting..." : "🚀 Submit Enquiry"}
               </Button>
             </motion.div>
 
