@@ -32,22 +32,22 @@ const CircleProgress = ({ value, label, range, emoji }: { value: number; label: 
 
   return (
     <div ref={ref} className="flex flex-col items-center">
-      <div className="relative w-12 h-12 md:w-16 md:h-16 mb-2">
+      <div className="relative w-20 h-20 md:w-24 md:h-24 mb-2">
         <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="5" />
+          <circle cx="60" cy="60" r={radius} fill="none" stroke="hsl(var(--border))" strokeWidth="6" />
           <circle
             cx="60" cy="60" r={radius} fill="none"
             stroke="hsl(var(--primary))"
-            strokeWidth="5"
+            strokeWidth="6"
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
             className="transition-all duration-100"
           />
         </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-sm">{emoji}</span>
-          <span className="text-base md:text-lg font-headline font-bold text-gradient-fire">{progress}%</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center leading-none">
+          <span className="text-xs md:text-sm mb-0.5">{emoji}</span>
+          <span className="text-sm md:text-base font-headline font-bold text-gradient-fire">{progress}%</span>
         </div>
       </div>
       <p className="text-sm md:text-base font-headline font-semibold text-center mb-0.5">{range}</p>
