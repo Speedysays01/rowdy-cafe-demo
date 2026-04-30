@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { User, Phone, MapPin, IndianRupee, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
 
-const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycby6xt7fQVvmnseAgJa64xdJD0TKRJhAk5fm8yxieciJu9xta6AWUJ0CXacvK4M2yHYi/exec";
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx5AGORoz9OOp3_oAVpPjIKnAB-FM0TA0kfqU7pM8PR4eIjT8EUQbZxE7lV8QJpsr1C/exec";
 
 const BookingSection = () => {
   const [form, setForm] = useState({ name: "", phone: "", city: "", investment: "", message: "" });
